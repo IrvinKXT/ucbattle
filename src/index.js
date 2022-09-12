@@ -21,7 +21,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<App />} />
+      <Route exact path="/ucbattle" element={<App />} />
       <Route exact path="V1" element={<V1 />} />
       <Route exact path="V2" element={<V2 />} />
       <Route exact path="V3" element={<V3 />} />
