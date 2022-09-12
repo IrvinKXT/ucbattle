@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ucbattle/static/css/main.e96713a6.css",
-    "main.js": "/ucbattle/static/js/main.fe616fe8.js",
+    "main.js": "/ucbattle/static/js/main.ee786630.js",
     "static/js/787.c4165c3d.chunk.js": "/ucbattle/static/js/787.c4165c3d.chunk.js",
     "static/media/HQCenarios.png": "/ucbattle/static/media/HQCenarios.4cb9b2127d00186c408a.png",
     "static/media/HQInEx.png": "/ucbattle/static/media/HQInEx.28beb4785b2de6678516.png",
@@ -22,11 +22,11 @@
     "static/media/V3Q2.png": "/ucbattle/static/media/V3Q2.ec357cc422ed55e05717.png",
     "index.html": "/ucbattle/index.html",
     "main.e96713a6.css.map": "/ucbattle/static/css/main.e96713a6.css.map",
-    "main.fe616fe8.js.map": "/ucbattle/static/js/main.fe616fe8.js.map",
+    "main.ee786630.js.map": "/ucbattle/static/js/main.ee786630.js.map",
     "787.c4165c3d.chunk.js.map": "/ucbattle/static/js/787.c4165c3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e96713a6.css",
-    "static/js/main.fe616fe8.js"
+    "static/js/main.ee786630.js"
   ]
 }
