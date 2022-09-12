@@ -23,7 +23,7 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<App />} />
-      <Route exact path="Ucbattle" element={<Ucbattle />} />
+      <Route exact path="ucbattle/" element={<Ucbattle />} />
       <Route exact path="V1" element={<V1 />} />
       <Route exact path="V2" element={<V2 />} />
       <Route exact path="V3" element={<V3 />} />
