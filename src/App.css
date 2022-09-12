@@ -1,0 +1,132 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #F9B300;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  background-color: #F9B300;
+}
+
+.fases{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+h1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.botaoV{
+  background-image: url('./components/imgs/Vilao_icone.png');
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+  border: 1px solid black;
+}
+
+.botaoVB{
+  background-image: url('./components/imgs/Cadeado.png');
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+  border: 1px solid black;
+}
+
+.botaoBook{
+  background-image: url('./components/imgs/Book.png');
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+  border: 1px solid black;
+}
+
+.botaoTreino{
+  background-image: url('./components/imgs/Heroi_icone.png');
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+  border: 1px solid black;
+}
+
+.Book{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Treino{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.V{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Link{
+  cursor: default;
+}

@@ -1,0 +1,49 @@
+.HQ{
+    width: 1002px;
+    max-height: 608px;
+    object-fit: contain;
+    margin-right: 140px;
+}
+
+.HQ--Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BotaoVoltar{
+    width: 130px;
+    height: 45px;
+    margin-right: 30px;
+    margin-top: 550px;
+    border-radius: 8px;
+    background-color: silver;
+}
+
+.BotaoVoltarBook{
+    width: 130px;
+    height: 45px;
+    border-radius: 8px;
+    margin-top: 126px;
+    margin-right: 1173px;
+    background-color: silver;
+}
+
+.Link{
+    cursor: default;
+  }
+
+.BotaoOpcoes{
+    width: 300px;
+    height: 45px;
+    margin: 50px;
+    border-radius: 8px;
+}
+
+.OpRow1{
+    margin-top: 70px;
+}
+
+.Book{
+    margin-top: 70px;
+}

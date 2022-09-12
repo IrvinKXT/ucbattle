@@ -1,0 +1,57 @@
+{
+    "Questoes": [
+        "O que representa um ator num diagrama de casos de uso?",
+        "O que é um caso de uso?",
+        "Qual das características a seguir está relacionada a um extend?",
+        "O que representa um caso de uso num diagrama de casos de uso?",
+        "Qual das características a seguir está relacionada a um include?",
+        "O que representa o limite do sistema num diagrama de casos de uso?"
+    ],
+    "Alternativas": [
+        "Um boneco palito",
+        "Uma elipse",
+        "Um retângulo",
+        "Um triângulo",
+
+        "Uma funcionalidade do sistema",
+        "Um botão",
+        "Uma interação do ator com o sistema",
+        "Um diagrama",
+
+        "Sempre ocorre quando o caso de uso base ocorre",
+        "Pode ou não ocorrer quando o caso de uso base ocorre",
+        "Sempre acontece imediatamente após o caso de uso base",
+        "Sempre acontece imediatamente antes do caso de uso base",
+
+        "Um retângulo",
+        "Um triângulo",
+        "Um boneco palito",
+        "Uma elipse",
+
+        "Sempre ocorre quando o caso de uso base ocorre",
+        "Se ele ocorrer, o caso de uso ocorrerá",
+        "Pode ou não ocorrer quando o caso de uso base ocorrer",
+        "Se ele ocorrer, o caso de uso base pode ou não ocorrer",
+        
+        "Um triângulo",
+        "Uma elipse",
+        "Um boneco palito",
+        "Um retângulo"
+    ],
+    "Corretas": [
+        0,
+        6,
+        9,
+        15,
+        16,
+        23
+    ],
+    "Dicas": [
+        "dica1",
+        "dica2",
+        "dica3",
+        "dica4",
+        "dica5",
+        "dica6"
+    ]
+}
