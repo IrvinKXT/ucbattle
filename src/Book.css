@@ -1,13 +1,13 @@
 .HQ{
-    width: 1002px;
-    max-height: 608px;
+    max-height: 70%;
+    max-width: 70%;
     object-fit: contain;
     margin-right: 140px;
 }
 
 .HQ--Container{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -15,7 +15,6 @@
     width: 130px;
     height: 45px;
     margin-right: 30px;
-    margin-top: 550px;
     border-radius: 8px;
     background-color: silver;
 }

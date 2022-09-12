@@ -171,7 +171,7 @@ function V3(){
                 </div>
                 <div className='charadas'>
                     <div>{charada}</div>
-                    <div><img className='Qimg' src={Qimagens[questao]} alt='AINDA TEM QUE FAZER' /></div>
+                    <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
                 <div className='dicas'><Dica 
                 dic={dicas[dica]} 
@@ -228,6 +228,17 @@ const Qimagens = [
     Qimg7,
     Qimg6_8
 ]
+
+const alts = [
+    "Um diagrama de casos de uso cujo sistema não está nomeado, possui dois atores que são o Cliente e o Vendedor. O Cliente realiza os casos de uso Comprar Tapete e Rastrear Tapete. O Vendedor realiza os casos de uso Confirmar Venda, Confirmar o Despache do Produto e Rastrear Tapete.",
+    "No diagrama estão presentes um retângulo com o nome de Máquina de venda de bilhetes, dois bonecos palito um escrito Viajante e o outro, Banco. Por fim há uma elipse com o nome Comprar bilhete e está ligada aos dois bonecos palito por meio de linhas simples",
+    "No diagrama estão presentes um retângulo com o nome de Terra dos Tapetes, dois bonecos palitos com os nomes de Cliente e Vendedor respectivamente. Cliente está ligado a duas elipses por meio de linhas simples, a primeira tem o nome de Comprar Tapete e a segunda, Rastrear Tapete. Vendedor está ligado a três elipses por meio de linhas simples, a primeira tem nome de Confirmar Venda, a segunda tem nome de Confirmar o Despache do Produto e a terceira, Rastrear Tapete.",
+    "No diagrama estão presentes um retângulo como o nome de Aplicativo Bancário, um boneco palito com o nome de Cliente que está ligado a uma elipse por meio de uma linha simples, essa elipse tem o nome de Transação Bancária e ela está ligada a outra elipse por meio de uma linha tracejada com uma seta apontando para a outra. Essa outra elipse tem o nome de Autenticação. Por cima da linha tracejada há um campo vazio faltando o nome que deveria estar escrito por cima da linha.",
+    "No diagrama estão presentes um retângulo com o nome de Terra dos Tapetes, dois bonecos palitos com os nomes de Cliente e Vendedor respectivamente. Cliente está ligado a duas elipses por meio de linhas simples, a primeira tem o nome de Comprar Tapete e a segunda, Rastrear Tapete. Vendedor está ligado a três elipses por meio de linhas simples, a primeira tem nome de Confirmar Venda, a segunda tem nome de Confirmar o Despache do Produto e a terceira, Rastrear Tapete.",
+    "No diagrama estão presentes um retângulo com o nome de Terminal de ponto de vendas, possui duas elipses com os seguintes nomes: Pagamento e Administrar usuários. Pagamento está ligada por linhas simples a três bonecos palito com os seguintes nomes: Cliente, Atendente e Serviço de Pagamento. Já Administrar usuários está ligada por uma linha simples a um quarto boneco palito cujo nome é Administrador.",
+    "No diagrama estão presentes um retângulo como o nome de Site de compra de eletrodomésticos, um boneco palito com o nome de Cliente que está ligado a uma elipse por meio de uma linha simples, essa elipse tem o nome de Cadastrar-se e ela está ligada a outra elipse por meio de uma linha tracejada com uma seta apontando para Cadastrar-se. Essa outra elipse tem o nome de Obter ajuda com o cadastro. Por cima da linha tracejada há um campo vazio faltando o nome que deveria estar escrito por cima da linha.",
+    "No diagrama estão presentes um retângulo com o nome de Terminal de ponto de vendas, possui duas elipses com os seguintes nomes: Pagamento e Administrar usuários. Pagamento está ligada por linhas simples a três bonecos palito com os seguintes nomes: Cliente, Atendente e Serviço de Pagamento. Já Administrar usuários está ligada por uma linha simples a um quarto boneco palito cujo nome é Administrador."
+];
 
 const alternativas = [
     "Aplicativo Bancário","Terra dos Lanches","Terra dos Tapetes","Terra das Cadeiras",
