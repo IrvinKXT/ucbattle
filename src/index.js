@@ -15,13 +15,15 @@ import HQCenarios from './HQCenarios';
 import HQDiagrama from './HQDiagrama';
 import HQGeneralizacao from './HQGeneralizacao';
 import HQInEx from './HQInEx';
+import Ucbattle from './Ucbattle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route exact path="ucbattle/" element={<App />} />
+      <Route exact path="/" element={<App />} />
+      <Route exact path="Ucbattle" element={<Ucbattle />} />
       <Route exact path="V1" element={<V1 />} />
       <Route exact path="V2" element={<V2 />} />
       <Route exact path="V3" element={<V3 />} />
