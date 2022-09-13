@@ -15,15 +15,12 @@ function App(props) {
   }
 
   useEffect(() => {
-    const get = () => {
       axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
         .then(res => {
           const fase = res.data;
           setFases(fase);
         })
         .catch(error => console.log(error))
-    }
-    get()
   }, [])
 
   if (fases.length > 0) {
@@ -86,7 +83,6 @@ function App(props) {
         </div>
       );
     }
-    //className='botaoV'
 
     else if (fases[3].desbloqueado) {
       return (

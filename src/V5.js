@@ -23,15 +23,12 @@ function V5(){
     const [fases, setFases] = useState([]);
 
     useEffect(() => {
-        const get = () => {
             axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
                 .then(res => {
                   const fase = res.data;
                   setFases(fase);
                 })
                 .catch(error => console.log(error))
-        }
-        get()
     }, [])
 
     const updateAPIData = async () => {
@@ -45,7 +42,16 @@ function V5(){
     }
 
     const jogarNovamente = () => {
-        window.location.reload();
+        setQuestao(0);
+        setAlternativa(0);
+        setDica(0);
+        setVpv(7);
+        setHpv(4);
+        setVwin(false);
+        setHwin(false);
+        setUsouh(false);
+        setDesativah(false);
+        setHcor('#DEDEDE');
     }
 
     function confereAlternativa(i){
@@ -253,7 +259,7 @@ const alternativas = [
 
     "Include",
     "Extend",
-    "Generalization",
+    "Generalização",
     "Nenhuma",
 
     "Anunciante e Cliente possuem uma relação de generalização",

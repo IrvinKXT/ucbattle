@@ -20,6 +20,7 @@ body{
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+  margin-right: 8px;
 }
 
   .alternativas{
@@ -45,13 +46,16 @@ body{
     height: 40px;
     margin: 20px;
     border-radius: 8px;
+    border: 1px solid;
   }
 
   .botaohEr{
     width: 130px;
-    height: 30px;
+    height: 40px;
     margin-right: 2px;
     border-radius: 8px;
+    border: 1px solid;
+    margin: 2px;
   }
 
 .hpv{
@@ -66,13 +70,14 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 100px;
+  padding: 100px;
 }
 
 .botaoMeJ{
   width: 130px;
-  height: 30px;
+  height: 40px;
   border-radius: 8px;
+  border: 1px solid;
 }
 
 .Link{
@@ -83,4 +88,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Qimg{
+  max-width: 65%;
+  max-height: 65%;
+  margin-left: 110px;
 }

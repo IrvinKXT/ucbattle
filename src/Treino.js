@@ -21,7 +21,14 @@ function Treino() {
     }
 
     const jogarNovamente = () => {
-        window.location.reload();
+        setQuestao(0);
+        setAlternativa(0);
+        setDica(0);
+        setVpv(3);
+        setHwin(false);
+        setUsouh(false);
+        setDesativah(false);
+        setHcor('#DEDEDE');
     }
 
     function confereAlternativa(i) {
