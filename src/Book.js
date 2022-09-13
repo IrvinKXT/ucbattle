@@ -23,9 +23,11 @@ function Book(){
                         <button className='BotaoOpcoes'>Include e Extend</button>
                     </Link>
                 </div>
+                <div className='Voltar'>
                     <Link to='/' tabIndex={-1} className='Link'>
                         <button className='BotaoVoltarBook'>Voltar</button>
                     </Link>
+                </div>
             </div>
         </div>
     );

@@ -28,7 +28,16 @@ function V1(){
     }
 
     const jogarNovamente = () => {
-        window.location.reload();
+        setQuestao(0);
+        setAlternativa(0);
+        setDica(0);
+        setVpv(3);
+        setHpv(4);
+        setVwin(false);
+        setHwin(false);
+        setUsouh(false);
+        setDesativah(false);
+        setHcor('#DEDEDE');
     }
 
     function confereAlternativa(i){

@@ -20,11 +20,11 @@
 }
 
 .BotaoVoltarBook{
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 130px;
     height: 45px;
     border-radius: 8px;
-    margin-top: 126px;
-    margin-right: 1173px;
     background-color: silver;
 }
 
@@ -44,5 +44,13 @@
 }
 
 .Book{
-    margin-top: 70px;
+    display: flex;
+}
+
+.Voltar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 35.5px;
+    margin-left: 5.5px;
 }
