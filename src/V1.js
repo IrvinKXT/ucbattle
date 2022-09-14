@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
+import Correct from './components/correct.mp3';
+import Incorret from './components/incorrect.mp3';
+import Victory from './components/victory.mp3';
+import Lose from './components/lose.mp3';
 
 function V1(){
     const [questao, setQuestao] = useState(0);
@@ -16,6 +20,8 @@ function V1(){
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
+    const [victory, setVictory] = useState({audio: new Audio(Victory)})
+    const [lose, setLose] = useState({audio: new Audio(Lose)});
 
     const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/2', {"id":"2","desbloqueado":true})
@@ -27,7 +33,16 @@ function V1(){
         }
     }
 
+    const pausar = () => {
+        victory.audio.pause();
+        lose.audio.pause();
+    }
+
     const jogarNovamente = () => {
+        victory.audio.pause();
+        victory.audio.currentTime = 0;
+        lose.audio.pause();
+        lose.audio.currentTime = 0;
         setQuestao(0);
         setAlternativa(0);
         setDica(0);
@@ -50,6 +65,8 @@ function V1(){
             }
 
             if(certo){
+                let audio = new Audio(Correct);
+                audio.play();
                 if(vpv > 1){
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -70,6 +87,8 @@ function V1(){
                 }
             }
             else{
+                let audio = new Audio(Incorret);
+                audio.play();
                 if(hpv > 1){
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
@@ -115,6 +134,12 @@ function V1(){
         const heroi = "Herói PV: " + hpv;
 
         if(hwin === true || vwin === true){
+            if(hwin){
+                victory.audio.play();
+            }
+            else if(vwin){
+                lose.audio.play();
+            }
             return(
                 <div className='vcontainer'>
                 <div className='pvs'>
@@ -125,12 +150,12 @@ function V1(){
                     <div>{charada}</div>
                 </div>
                 <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}} onClick={() => Habilidade()}>Habilidade</button>
+                    <button className='botaohEr' style={{backgroundColor: hcor}}>Habilidade</button>
                     <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
                 </div>
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaoMeJ'>Menu Principal</button>
+                    <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                     </Link>
                     <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                 </div>

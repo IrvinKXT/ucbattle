@@ -8,6 +8,10 @@ import Qimg1_5_8 from './components/imgs/v5q1e5e8.png';
 import Qimg2 from './components/imgs/v5q2.png';
 import Qimg3_7_10 from './components/imgs/v5q3e7e10.png';
 import Qimg4_6_9 from './components/imgs/v5q4e6e9.png';
+import Correct from './components/correct.mp3';
+import Incorret from './components/incorrect.mp3';
+import Victory from './components/victory.mp3';
+import Lose from './components/lose.mp3';
 
 function V5(){
     const [questao, setQuestao] = useState(0);
@@ -20,16 +24,16 @@ function V5(){
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
-    const [fases, setFases] = useState([]);
+    //const [fases, setFases] = useState([]);
 
-    useEffect(() => {
+   /* useEffect(() => {
             axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
                 .then(res => {
                   const fase = res.data;
                   setFases(fase);
                 })
                 .catch(error => console.log(error))
-    }, [])
+    }, [])*/
 
     const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/5', {"id":"5","desbloqueado":true})
@@ -64,6 +68,8 @@ function V5(){
             }
 
             if(certo){
+                let audio = new Audio(Correct);
+                audio.play();
                 if(vpv > 1){
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -84,6 +90,8 @@ function V5(){
                 }
             }
             else{
+                let audio = new Audio(Incorret);
+                audio.play();
                 if(hpv > 1){
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
@@ -129,6 +137,14 @@ function V5(){
         const heroi = "Herói PV: " + hpv;
 
         if(hwin === true || vwin === true){
+            if(hwin){
+                let audio = new Audio(Victory);
+                audio.play();
+            }
+            else if(vwin){
+                let audio = new Audio(Lose);
+                audio.play();
+            }
             return(
                 <div className='vcontainer'>
                 <div className='pvs'>
@@ -139,7 +155,7 @@ function V5(){
                     <div>{charada}</div>
                 </div>
                 <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}} onClick={() => Habilidade()}>Habilidade</button>
+                    <button className='botaohEr' style={{backgroundColor: hcor}} >Habilidade</button>
                     <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
                 </div>
                 <div className='botoesOpcoes'>
@@ -204,11 +220,11 @@ function V5(){
     }
 
     //Para combater trapaça
-    if(fases.length > 0){
-        if(fases[4].desbloqueado){
+   // if(fases.length > 0){
+     //   if(fases[4].desbloqueado){
             return render();
-        }
-    }
+      //  }
+   // }
     //return render();
 }
 
