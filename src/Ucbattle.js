@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Correct from './components/correct.mp3';
+import App from './App';
 
 function Ucbattle(){
-    const audio = new Audio(Correct);
+    return(
+        <div>
+            <App />
+        </div>
+    );
+    /*const audio = new Audio(Correct);
 
     const start = () => {
         audio.play();
@@ -20,7 +26,7 @@ function Ucbattle(){
                 <button className='ContinuarBotao' onClick={start}>Continuar</button>
             </div>
         </div>
-    );
+    );*/
 }
 
 export default Ucbattle;
