@@ -137,7 +137,7 @@ function V2(){
                 let audio = new Audio(Victory);
                 audio.play();
             }
-            else if(vwin){
+            else{
                 let audio = new Audio(Lose);
                 audio.play();
             }
