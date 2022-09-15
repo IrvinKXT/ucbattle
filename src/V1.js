@@ -137,7 +137,7 @@ function V1(){
             if(hwin){
                 victory.audio.play();
             }
-            else{
+            else if(vwin){
                 lose.audio.play();
             }
             return(

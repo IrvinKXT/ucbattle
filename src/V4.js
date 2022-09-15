@@ -140,7 +140,7 @@ function V4(){
                 let audio = new Audio(Victory);
                 audio.scrollTop();
             }
-            else{
+            else if(vwin){
                 let audio = new Audio(Lose);
                 audio.play();
             }

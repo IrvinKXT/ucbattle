@@ -141,7 +141,7 @@ function V5(){
                 let audio = new Audio(Victory);
                 audio.play();
             }
-            else{
+            else if(vwin){
                 let audio = new Audio(Lose);
                 audio.play();
             }
