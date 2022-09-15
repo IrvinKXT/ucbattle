@@ -1,8 +1,9 @@
 import './App.css';
-import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Correct from './components/correct.mp3';
+//import { Link } from 'react-router-dom';
+import React from 'react';
+//import React, { useEffect, useState } from 'react';
+//import axios from 'axios';
+//import Correct from './components/correct.mp3';
 import App from './App';
 
 function Ucbattle(){

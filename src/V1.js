@@ -20,9 +20,8 @@ function V1(){
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
-    const [victory, setVictory] = useState({audio: new Audio(Victory)})
-    const [lose, setLose] = useState({audio: new Audio(Lose)});
-
+    const [victory] = useState({audio: new Audio(Victory)});
+    const [lose] = useState({audio: new Audio(Lose)});
     const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/2', {"id":"2","desbloqueado":true})
     }
