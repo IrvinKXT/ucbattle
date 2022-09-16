@@ -79,6 +79,11 @@ function App(props) {
               <small>Treino</small>
             </div>
           </div>
+          <div className='MenuInicial'>
+            <Link to="/ucbattle" tabIndex={-1} className='Link'>
+              <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+          </div>
 
         </div>
       );
@@ -134,6 +139,11 @@ function App(props) {
               <small>Treino</small>
             </div>
           </div>
+          <div className='MenuInicial'>
+            <Link to="/ucbattle" tabIndex={-1} className='Link'>
+              <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+          </div>
 
         </div>
       );
@@ -184,6 +194,11 @@ function App(props) {
               <small>Treino</small>
             </div>
           </div>
+          <div className='MenuInicial'>
+            <Link to="/ucbattle" tabIndex={-1} className='Link'>
+              <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+          </div>
 
         </div>
       );
@@ -229,6 +244,11 @@ function App(props) {
               <small>Treino</small>
             </div>
           </div>
+          <div className='MenuInicial'>
+            <Link to="/ucbattle" tabIndex={-1} className='Link'>
+              <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+          </div>
 
         </div>
       );
@@ -268,6 +288,11 @@ function App(props) {
               </Link>
               <small>Treino</small>
             </div>
+          </div>
+          <div className='MenuInicial'>
+            <Link to="/ucbattle" tabIndex={-1} className='Link'>
+              <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
           </div>
 
         </div>

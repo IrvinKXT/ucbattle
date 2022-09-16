@@ -11,7 +11,7 @@ import Qimg4 from './components/imgs/V3Q4.png';
 import Qimg6_8 from './components/imgs/V3Q6e8.png';
 import Qimg7 from './components/imgs/V3Q7.png';
 import Correct from './components/correct.mp3';
-import Incorret from './components/incorrect.mp3';
+import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 
@@ -26,6 +26,8 @@ function V3(){
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
+    const [victory] = useState({audio: new Audio(Victory)});
+    const [lose] = useState({audio: new Audio(Lose)});
     //const [fases, setFases] = useState([]);
 
     /*useEffect(() => {
@@ -47,7 +49,16 @@ function V3(){
         }
     }
 
+    const pausar = () => {
+        victory.audio.pause();
+        lose.audio.pause();
+    }
+
     const jogarNovamente = () => {
+        victory.audio.pause();
+        victory.audio.currentTime = 0;
+        lose.audio.pause();
+        lose.audio.currentTime = 0;
         setQuestao(0);
         setAlternativa(0);
         setDica(0);
@@ -92,7 +103,7 @@ function V3(){
                 }
             }
             else{
-                let audio = new Audio(Incorret);
+                let audio = new Audio(Incorrect);
                 audio.play();
                 if(hpv > 1){
                     setHpv(hpv - 1)
@@ -140,12 +151,10 @@ function V3(){
 
         if(hwin === true || vwin === true){
             if(hwin){
-                let audio = new Audio(Victory);
-                audio.play();
+                victory.audio.play();
             }
             else if(vwin){
-                let audio = new Audio(Lose);
-                audio.play();
+                lose.audio.play();
             }
             return(
                 <div className='vcontainer'>
@@ -162,7 +171,7 @@ function V3(){
                 </div>
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaoMeJ'>Menu Principal</button>
+                    <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                     </Link>
                     <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                 </div>

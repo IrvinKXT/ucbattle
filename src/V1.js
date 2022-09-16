@@ -5,9 +5,10 @@ import axios from 'axios';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
 import Correct from './components/correct.mp3';
-import Incorret from './components/incorrect.mp3';
+import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
+import HeR from './components/HeR';
 
 function V1(){
     const [questao, setQuestao] = useState(0);
@@ -22,6 +23,7 @@ function V1(){
     const [hcor, setHcor] = useState('#DEDEDE');
     const [victory] = useState({audio: new Audio(Victory)});
     const [lose] = useState({audio: new Audio(Lose)});
+    
     const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/2', {"id":"2","desbloqueado":true})
     }
@@ -86,7 +88,7 @@ function V1(){
                 }
             }
             else{
-                let audio = new Audio(Incorret);
+                let audio = new Audio(Incorrect);
                 audio.play();
                 if(hpv > 1){
                     setHpv(hpv - 1)
@@ -112,7 +114,13 @@ function V1(){
     }
 
     function renderAlternativa(i){
-        return <Alternativa value={alternativas[alternativa + i]} indice={i} onClick={() => confereAlternativa(i)}/>
+        return <Alternativa
+         value={alternativas[alternativa + i]} 
+         indice={i} 
+         onClick={() => confereAlternativa(i)}
+         vwin={vwin}
+         hwin={hwin}
+         />
     }
 
     function render(){
@@ -148,10 +156,12 @@ function V1(){
                 <div className='charadas'>
                     <div>{charada}</div>
                 </div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}}>Habilidade</button>
-                    <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
-                </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={() => Habilidade} 
+                />
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
                     <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
@@ -192,12 +202,12 @@ function V1(){
                 pv={hpv}
                 desativou={desativah}
                 /></div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}} onClick={() => Habilidade()}>Habilidade</button>
-                    <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
-                    </Link>
-                </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={() => Habilidade()} 
+                />
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}

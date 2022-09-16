@@ -3,6 +3,9 @@ import './V.css';
 import { Link } from 'react-router-dom';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
+import Correct from './components/correct.mp3';
+import Incorrect from './components/incorrect.mp3';
+import Victory from './components/victory.mp3';
 
 function Treino() {
     const [questao, setQuestao] = useState(0);
@@ -13,6 +16,7 @@ function Treino() {
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
+    const [victory] = useState({audio: new Audio(Victory)});
 
     const Habilidade = () => {
         if (4 <= 2 && desativah === false) {
@@ -20,7 +24,13 @@ function Treino() {
         }
     }
 
+    const pausar = () => {
+        victory.audio.pause();
+    }
+
     const jogarNovamente = () => {
+        victory.audio.pause();
+        victory.audio.currentTime = 0;
         setQuestao(0);
         setAlternativa(0);
         setDica(0);
@@ -41,6 +51,8 @@ function Treino() {
             }
 
             if (certo) {
+                let audio = new Audio(Correct);
+                audio.play();
                 if (vpv > 1) {
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -61,6 +73,8 @@ function Treino() {
                 }
             }
             else {
+                let audio = new Audio(Incorrect);
+                audio.play();
                 if (questao + 1 >= Questoes.length) {
                     setQuestao(0);
                 }
@@ -103,6 +117,7 @@ function Treino() {
         const heroi = "Herói PV: 4";
 
         if (hwin === true) {
+            victory.audio.play();
             return (
                 <div className='vcontainer'>
                     <div className='pvs'>
@@ -118,7 +133,7 @@ function Treino() {
                     </div>
                     <div className='botoesOpcoes'>
                         <Link to="/" tabIndex={-1} className='Link'>
-                            <button className='botaoMeJ'>Menu Principal</button>
+                            <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                         </Link>
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
