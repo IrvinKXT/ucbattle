@@ -1,7 +1,7 @@
 import React, {/*useEffect, */useState} from 'react';
 import './V.css';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
 import Qimg1_3_5_7 from './components/imgs/V4Q1e3e5e7(1).png';
@@ -12,7 +12,7 @@ import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 
-function V4(){
+function V4(props){
     const [questao, setQuestao] = useState(0);
     const [alternativa, setAlternativa] = useState(0);
     const [dica, setDica] = useState(0);
@@ -36,9 +36,9 @@ function V4(){
                 .catch(error => console.log(error))
     }, [])*/
 
-    const updateAPIData = async () => {
+    /*const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/5', {"id":"5","desbloqueado":true})
-    }
+    }*/
 
     const Habilidade = () => {
         if(hpv <= 2 && desativah === false){
@@ -133,7 +133,9 @@ function V4(){
         let charada;
         if(hwin){
             charada = "Vencedor: Herói";
-            updateAPIData();
+            if(!props.v5){
+                props.alteraV5();
+            }
         }
         else{
             if(vwin){

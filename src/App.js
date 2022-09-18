@@ -1,304 +1,73 @@
 import './App.css';
-import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import {Routes, BrowserRouter, Route} from "react-router-dom"
+//import React from 'react';
+import React, { /*useEffect,*/ useState } from 'react';
+//import axios from 'axios';
+//import Aguardar from './components/Aguardar.js'
+//import MenuIni from './MenuIni';
+import MenuPrin from './MenuPrin';
+import V1 from './V1';
+import V5 from './V5';
+import V2 from './V2';
+import V3 from './V3';
+import V4 from './V4';
+import Treino from './Treino';
+import Book from './Book';
+import HQCenarios from './HQCenarios';
+import HQDiagrama from './HQDiagrama';
+import HQGeneralizacao from './HQGeneralizacao';
+import HQInEx from './HQInEx';
+import Ucbattle from './Ucbattle';
 
-function App(props) {
-  const [fases, setFases] = useState([]);
+//<Route exact path="/" element={<MenuIni />} />
 
-  const resetProgress = async () => {
-    await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/2', { "id": "2", "desbloqueado": false });
-    await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/3', { "id": "3", "desbloqueado": false });
-    await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/4', { "id": "4", "desbloqueado": false });
-    await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/5', { "id": "5", "desbloqueado": false });
-    await window.location.reload();
+function App(){
+  const [v2, setV2] = useState(false);
+  const [v3, setV3] = useState(false);
+  const [v4, setV4] = useState(false);
+  const [v5, setV5] = useState(false);
+
+
+
+  const alteraV2 = () => {
+    setV2(true);
   }
 
-  useEffect(() => {
-      axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
-        .then(res => {
-          const fase = res.data;
-          setFases(fase);
-        })
-        .catch(error => console.log(error))
-  }, [])
-
-  if (fases.length > 0) {
-    if (fases[4].desbloqueado) {
-      return (
-        <div>
-          <h1>
-            U.C. Battle
-          </h1>
-
-          <div className='fases'>
-            <div className='V'>
-              <Link to="/v1" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V1</button>
-              </Link>
-              <small>Vilão 1</small>
-            </div>
-            <div className='V'>
-              <Link to="/v2" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V2</button>
-              </Link>
-              <small>Vilão 2</small>
-            </div>
-            <div className='V'>
-              <Link to="/v3" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V3</button>
-              </Link>
-              <small>Vilão 3</small>
-            </div>
-            <div className='V'>
-              <Link to="/v4" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V4</button>
-              </Link>
-              <small>Vilão 4</small>
-            </div>
-            <div className='V'>
-              <Link to="/v5" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V5</button>
-              </Link>
-              <small>Vilão 5</small>
-            </div>
-          </div>
-
-          <div className='options'>
-            <div className='Book' name='Book'>
-              <Link to='/book' tabIndex={-1} className='Link'>
-              <button className='botaoBook'>Book</button>
-              </Link>
-              <small>Book</small>
-            </div>
-            <button onClick={() => resetProgress()}>Reset</button>
-            <div className='Treino'>
-              <Link to="/treino" tabIndex={-1} className='Link'>
-              <button className='botaoTreino'>Treino</button>
-              </Link>
-              <small>Treino</small>
-            </div>
-          </div>
-          <div className='MenuInicial'>
-            <Link to="/ucbattle" tabIndex={-1} className='Link'>
-              <button className='BotaoMenuI'>Menu Inicial</button>
-            </Link>
-          </div>
-
-        </div>
-      );
-    }
-
-    else if (fases[3].desbloqueado) {
-      return (
-        <div>
-          <h1>
-            U.C. Battle
-          </h1>
-
-          <div className='fases'>
-            <div className='V'>
-              <Link to="/v1" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V1</button>
-              </Link>
-              <small>Vilão 1</small>
-            </div>
-            <div className='V'>
-              <Link to="/v2" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V2</button>
-              </Link>
-              <small>Vilão 2</small>
-            </div>
-            <div className='V'>
-              <Link to="/v3" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V3</button>
-              </Link>
-              <small>Vilão 3</small>
-            </div>
-            <div className='V'>
-              <Link to="/v4" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V4</button>
-              </Link>
-              <small>Vilão 4</small>
-            </div>
-            <button className='botaoVB'>V5</button>
-          </div>
-
-          <div className='options'>
-            <div className='Book' name='Book'>
-              <Link to='/book' tabIndex={-1} className='Link'>
-              <button className='botaoBook'>Book</button>
-              </Link>
-              <small>Book</small>
-            </div>
-            <button onClick={() => resetProgress()}>Reset</button>
-            <div className='Treino'>
-              <Link to="/treino" tabIndex={-1} className='Link'>
-              <button className='botaoTreino'>Treino</button>
-              </Link>
-              <small>Treino</small>
-            </div>
-          </div>
-          <div className='MenuInicial'>
-            <Link to="/ucbattle" tabIndex={-1} className='Link'>
-              <button className='BotaoMenuI'>Menu Inicial</button>
-            </Link>
-          </div>
-
-        </div>
-      );
-    }
-
-    else if (fases[2].desbloqueado) {
-      return (
-        <div>
-          <h1>
-            U.C. Battle
-          </h1>
-
-          <div className='fases'>
-            <div className='V'>
-              <Link to="/v1" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V1</button>
-              </Link>
-              <small>Vilão 1</small>
-            </div>
-            <div className='V'>
-              <Link to="/v2" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V2</button>
-              </Link>
-              <small>Vilão 2</small>
-            </div>
-            <div className='V'>
-              <Link to="/v3" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V3</button>
-              </Link>
-              <small>Vilão 3</small>
-            </div>
-            <button className='botaoVB'>V4</button>
-            <button className='botaoVB'>V5</button>
-          </div>
-
-          <div className='options'>
-            <div className='Book' name='Book'>
-              <Link to='/book' tabIndex={-1} className='Link'>
-              <button className='botaoBook'>Book</button>
-              </Link>
-              <small>Book</small>
-            </div>
-            <button onClick={() => resetProgress()}>Reset</button>
-            <div className='Treino'>
-              <Link to="/treino" tabIndex={-1} className='Link'>
-              <button className='botaoTreino'>Treino</button>
-              </Link>
-              <small>Treino</small>
-            </div>
-          </div>
-          <div className='MenuInicial'>
-            <Link to="/ucbattle" tabIndex={-1} className='Link'>
-              <button className='BotaoMenuI'>Menu Inicial</button>
-            </Link>
-          </div>
-
-        </div>
-      );
-    }
-
-    else if (fases[1].desbloqueado) {
-      return (
-        <div>
-          <h1>
-            U.C. Battle
-          </h1>
-
-          <div className='fases'>
-            <div className='V'>
-              <Link to="/v1" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V1</button>
-              </Link>
-              <small>Vilão 1</small>
-            </div>
-            <div className='V'>
-              <Link to="/v2" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V2</button>
-              </Link>
-              <small>Vilão 2</small>
-            </div>
-            <button className='botaoVB'>V3</button>
-            <button className='botaoVB'>V4</button>
-            <button className='botaoVB'>V5</button>
-          </div>
-
-          <div className='options'>
-            <div className='Book' name='Book'>
-              <Link to='/book' tabIndex={-1} className='Link'>
-              <button className='botaoBook'>Book</button>
-              </Link>
-              <small>Book</small>
-            </div>
-            <button onClick={() => resetProgress()}>Reset</button>
-            <div className='Treino'>
-              <Link to="/treino" tabIndex={-1} className='Link'>
-              <button className='botaoTreino'>Treino</button>
-              </Link>
-              <small>Treino</small>
-            </div>
-          </div>
-          <div className='MenuInicial'>
-            <Link to="/ucbattle" tabIndex={-1} className='Link'>
-              <button className='BotaoMenuI'>Menu Inicial</button>
-            </Link>
-          </div>
-
-        </div>
-      );
-    }
-
-    else {
-      return (
-        <div>
-          <h1>
-            U.C. Battle
-          </h1>
-
-          <div className='fases'>
-            <div className='V'>
-              <Link to="/v1" tabIndex={-1} className='Link'>
-                <button className='botaoV'>V1</button>
-              </Link>
-              <small>Vilão 1</small>
-            </div>
-            <button className='botaoVB'>V2</button>
-            <button className='botaoVB'>V3</button>
-            <button className='botaoVB'>V4</button>
-            <button className='botaoVB'>V5</button>
-          </div>
-
-          <div className='options'>
-            <div className='Book' name='Book'>
-              <Link to='/book' tabIndex={-1} className='Link'>
-              <button className='botaoBook'>Book</button>
-              </Link>
-              <small>Book</small>
-            </div>
-            <button onClick={() => resetProgress()}>Reset</button>
-            <div className='Treino'>
-              <Link to="/treino" tabIndex={-1} className='Link'>
-              <button className='botaoTreino'>Treino</button>
-              </Link>
-              <small>Treino</small>
-            </div>
-          </div>
-          <div className='MenuInicial'>
-            <Link to="/ucbattle" tabIndex={-1} className='Link'>
-              <button className='BotaoMenuI'>Menu Inicial</button>
-            </Link>
-          </div>
-
-        </div>
-      );
-    }
+  const alteraV3 = () => {
+    setV3(true);
   }
+
+  const alteraV4 = () => {
+    setV4(true);
+  }
+
+  const alteraV5 = () => {
+    setV5(true);
+  }
+
+  const resetProgress = () => {
+    window.location.reload();
+  }
+
+    return(
+        <BrowserRouter>
+    <Routes>
+      <Route exact path="ucbattle/" element={<Ucbattle v2={v2} resetProgress={() => resetProgress} />} />
+      <Route exact path="/" element={<MenuPrin v2={v2} v3={v3} v4={v4} v5={v5} />} />
+      <Route exact path="V1" element={<V1 v2={v2} alteraV2={alteraV2} />} />
+      <Route exact path="V2" element={<V2 v3={v3} alteraV3={alteraV3} />} />
+      <Route exact path="V3" element={<V3 v4={v4} alteraV4={alteraV4} />} />
+      <Route exact path="V4" element={<V4 v5={v5} alteraV5={alteraV5} />} />
+      <Route exact path="V5" element={<V5 />} />
+      <Route exact path="Treino" element={<Treino />} />
+      <Route exact path="Book" element={<Book />} />
+      <Route exact path="HQCenarios" element={<HQCenarios />} />
+      <Route exact path="HQDiagrama" element={<HQDiagrama />} />
+      <Route exact path="HQGeneralizacao" element={<HQGeneralizacao />} />
+      <Route exact path="HQInEx" element={<HQInEx />} />
+    </Routes>
+    </BrowserRouter>
+    )
 }
 
 export default App;

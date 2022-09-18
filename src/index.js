@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Routes, BrowserRouter, Route} from "react-router-dom"
+/*import {Routes, BrowserRouter, Route} from "react-router-dom"
 import V1 from './V1';
 import V5 from './V5';
 import V2 from './V2';
@@ -14,29 +14,13 @@ import Book from './Book';
 import HQCenarios from './HQCenarios';
 import HQDiagrama from './HQDiagrama';
 import HQGeneralizacao from './HQGeneralizacao';
-import HQInEx from './HQInEx';
-import Ucbattle from './Ucbattle';
+import HQInEx from './HQInEx';*/
+//import Ucbattle from './Ucbattle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-      <Route exact path="/" element={<App />} />
-      <Route exact path="ucbattle/" element={<Ucbattle />} />
-      <Route exact path="V1" element={<V1 />} />
-      <Route exact path="V2" element={<V2 />} />
-      <Route exact path="V3" element={<V3 />} />
-      <Route exact path="V4" element={<V4 />} />
-      <Route exact path="V5" element={<V5 />} />
-      <Route exact path="Treino" element={<Treino />} />
-      <Route exact path="Book" element={<Book />} />
-      <Route exact path="HQCenarios" element={<HQCenarios />} />
-      <Route exact path="HQDiagrama" element={<HQDiagrama />} />
-      <Route exact path="HQGeneralizacao" element={<HQGeneralizacao />} />
-      <Route exact path="HQInEx" element={<HQInEx />} />
-    </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
 
