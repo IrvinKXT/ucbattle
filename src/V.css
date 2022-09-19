@@ -6,6 +6,7 @@ body{
   display: flex;
   justify-content: space-between;
   margin-top: 3px;
+  font-size: 18px;
 }
 
 .charadas{
@@ -14,6 +15,18 @@ body{
   align-items: center;
   flex-direction: column;
   white-space: pre-line;
+  height: 58vh;
+  width: 100%;
+}
+
+.charadasFim{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  white-space: pre-line;
+  height: 29vh;
+  font-size: 30px;
 }
 
 .hEr{
@@ -91,7 +104,6 @@ body{
 }
 
 .Qimg{
-  max-width: 65%;
-  max-height: 65%;
-  margin-left: 110px;
+  max-width: 90%;
+  max-height: 90%;
 }

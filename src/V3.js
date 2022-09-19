@@ -81,8 +81,10 @@ function V3(props){
             }
 
             if(certo){
-                let audio = new Audio(Correct);
-                audio.play();
+                if(props.acertarErrar){
+                    let audio = new Audio(Correct);
+                    audio.play();
+                }
                 if(vpv > 1){
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -103,8 +105,10 @@ function V3(props){
                 }
             }
             else{
-                let audio = new Audio(Incorrect);
-                audio.play();
+                if(props.acertarErrar){
+                    let audio = new Audio(Incorrect);
+                    audio.play();
+                }
                 if(hpv > 1){
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
@@ -152,10 +156,10 @@ function V3(props){
         const heroi = "Herói PV: " + hpv;
 
         if(hwin === true || vwin === true){
-            if(hwin){
+            if(hwin && props.ganharPerder){
                 victory.audio.play();
             }
-            else if(vwin){
+            else if(vwin && props.ganharPerder){
                 lose.audio.play();
             }
             return(
@@ -164,7 +168,7 @@ function V3(props){
                     <div className='vpv'>{vilao}</div>
                     <div className='hpv'>{heroi}</div>
                 </div>
-                <div className='charadas'>
+                <div className='charadasFim'>
                     <div>{charada}</div>
                 </div>
                 <div className='hEr'>

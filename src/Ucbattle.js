@@ -38,16 +38,18 @@ function Ucbattle(props){
         window.location.reload();
       }
 
+      var h = (window.innerHeight * 80) / 100;
+
         if(props.v2){
             return(
-                <div className='Ucbattle--Container'>
+                <div className='Ucbattle--Container' style={{height: h}}>
                     <div className='Titulo--Container'>
-                        <h1>Ucbattle</h1>
+                        <h1>U.C. Battle</h1>
                     </div>
-                    <div className='UcbattleBotoes' style={{display: "flex", alignItens: "center", justifyContent: "center"}}>
-                        <button className='NovoJogoBotao' onClick={() => resetProgress()}>Novo Jogo</button>
+                    <div className='UcbattleBotoes' style={{height: h}}>
+                        <button className='BotaoZerarProgresso' onClick={() => resetProgress()}>Zerar Progresso</button>
                         <Link to="/" tabIndex={-1} className='Link'>
-                            <button className='ContinuarBotao'>Continuar</button>
+                            <button className='BotaoJogar'>Jogar</button>
                         </Link>
                     </div>
                     <div className='Aguardar'>
@@ -60,13 +62,13 @@ function Ucbattle(props){
         }
         else{
             return(
-                <div className='Ucbattle--Container'>
+                <div className='Ucbattle--Container' >
                     <div className='Titulo--Container'>
-                        <h1>Ucbattle</h1>
+                        <h1>U.C. Battle</h1>
                     </div>
-                    <div className='UcbattleBotoes' style={{display: "flex", alignItens: "center", justifyContent: "center"}}>
+                    <div className='UcbattleBotoes' style={{height: h}}>
                         <Link to="/" tabIndex={-1} className='Link'>
-                            <button className='NovoJogoBotao'>Novo Jogo</button>
+                            <button className='BotaoJogar'>Jogar</button>
                         </Link>
                     </div>
                 </div>

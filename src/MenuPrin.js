@@ -1,19 +1,19 @@
 import './App.css';
 import { Link } from 'react-router-dom';
 import React, { /*useEffect, useState */} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 function MenuPrin(props) {
     console.log("Props: ", props.v2)
   //const [fases, setFases] = useState([]);
 
-  const resetProgress = async () => {
+  /*const resetProgress = async () => {
     await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/2', { "id": "2", "desbloqueado": false });
     await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/3', { "id": "3", "desbloqueado": false });
     await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/4', { "id": "4", "desbloqueado": false });
     await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/5', { "id": "5", "desbloqueado": false });
     await window.location.reload();
-  }
+  }*/
 
   /*useEffect(() => {
       axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
@@ -71,7 +71,7 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button onClick={() => resetProgress()}>Reset</button>
+            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -79,9 +79,12 @@ function MenuPrin(props) {
               <small>Treino</small>
             </div>
           </div>
-          <div className='MenuInicial'>
+          <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/opcoes" tabIndex={-1} className='Link'>
+            <button className='BotaoOpcao'>Opções</button>
             </Link>
           </div>
 
@@ -131,7 +134,7 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button onClick={() => resetProgress()}>Reset</button>
+            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -139,9 +142,12 @@ function MenuPrin(props) {
               <small>Treino</small>
             </div>
           </div>
-          <div className='MenuInicial'>
+          <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/opcoes" tabIndex={-1} className='Link'>
+            <button className='BotaoOpcao'>Opções</button>
             </Link>
           </div>
 
@@ -186,7 +192,7 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button onClick={() => resetProgress()}>Reset</button>
+            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -194,9 +200,12 @@ function MenuPrin(props) {
               <small>Treino</small>
             </div>
           </div>
-          <div className='MenuInicial'>
+          <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/opcoes" tabIndex={-1} className='Link'>
+            <button className='BotaoOpcao'>Opções</button>
             </Link>
           </div>
 
@@ -236,7 +245,7 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button onClick={() => resetProgress()}>Reset</button>
+            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -244,9 +253,12 @@ function MenuPrin(props) {
               <small>Treino</small>
             </div>
           </div>
-          <div className='MenuInicial'>
+          <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/opcoes" tabIndex={-1} className='Link'>
+            <button className='BotaoOpcao'>Opções</button>
             </Link>
           </div>
 
@@ -281,7 +293,7 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button onClick={() => resetProgress()}>Reset</button>
+            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -289,9 +301,12 @@ function MenuPrin(props) {
               <small>Treino</small>
             </div>
           </div>
-          <div className='MenuInicial'>
+          <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/opcoes" tabIndex={-1} className='Link'>
+            <button className='BotaoOpcao'>Opções</button>
             </Link>
           </div>
 

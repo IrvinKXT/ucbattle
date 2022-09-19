@@ -3,8 +3,9 @@ import './Book.css';
 import { Link } from 'react-router-dom';
 
 function Book(){
+    var h = (window.innerHeight * 10) / 100;
     return (
-        <div className='Book'>
+        <div className='Book' style={{height: h}}>
             <h1>Escolha uma história para ler</h1>
             <div className='HQOpcoes--Container'>
                 <div className='OpRow1'>

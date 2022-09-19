@@ -21,10 +21,7 @@ function V2(props){
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
     const [victory] = useState({audio: new Audio(Victory)});
-    const [lose] = useState({audio: new Audio(Lose)});
-
-    var sons = false;
-    
+    const [lose] = useState({audio: new Audio(Lose)});    
     //const [fases, setFases] = useState([]);
 
     /*useEffect(() => {
@@ -78,8 +75,10 @@ function V2(props){
             }
 
             if(certo){
-                let audio = new Audio(Correct);
-                audio.play();
+                if(props.acertarErrar){
+                    let audio = new Audio(Correct);
+                    audio.play();
+                }
                 if(vpv > 1){
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -100,8 +99,10 @@ function V2(props){
                 }
             }
             else{
-                let audio = new Audio(Incorrect);
-                audio.play();
+                if(props.acertarErrar){
+                    let audio = new Audio(Incorrect);
+                    audio.play();
+                }
                 if(hpv > 1){
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
@@ -149,11 +150,10 @@ function V2(props){
         const heroi = "Herói PV: " + hpv;
 
         if(hwin === true || vwin === true){
-            sons = true;
-            if(hwin && sons){
+            if(hwin && props.ganharPerder){
                 victory.audio.play();
             }
-            else if(vwin){
+            else if(vwin && props.ganharPerder){
                 lose.audio.play();
             }
             return(
@@ -162,7 +162,7 @@ function V2(props){
                     <div className='vpv'>{vilao}</div>
                     <div className='hpv'>{heroi}</div>
                 </div>
-                <div className='charadas'>
+                <div className='charadasFim'>
                     <div>{charada}</div>
                 </div>
                 <div className='hEr'>
@@ -282,7 +282,7 @@ const Questoes = [
     "18. Sistema reconhece que foi feito o pagamento e retorna o recibo da compra para o cliente \n" +
     "19. Sistema atualiza status do pedido para aguardando aprovação do vendedor e envia-lhe uma notificação da compra",
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    "Qual desses não é um possível ator de um caso de uso?",
+    "Qual das alternativas não é um possível ator de um caso de uso?",
     //---------------------------------------------------------------
     "Ao final de um fluxo alternativo é correto afirmar:"
 ];
