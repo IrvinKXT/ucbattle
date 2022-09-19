@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ucbattle/static/css/main.9f80097b.css",
-    "main.js": "/ucbattle/static/js/main.8946c18b.js",
+    "main.css": "/ucbattle/static/css/main.934b13cf.css",
+    "main.js": "/ucbattle/static/js/main.c7dec849.js",
     "static/js/787.c4165c3d.chunk.js": "/ucbattle/static/js/787.c4165c3d.chunk.js",
     "static/media/HQCenarios.png": "/ucbattle/static/media/HQCenarios.4cb9b2127d00186c408a.png",
     "static/media/HQInEx.png": "/ucbattle/static/media/HQInEx.28beb4785b2de6678516.png",
@@ -25,12 +25,12 @@
     "static/media/correct.mp3": "/ucbattle/static/media/correct.0026d245a1e3149dd8b5.mp3",
     "static/media/incorrect.mp3": "/ucbattle/static/media/incorrect.aa5304298e4a10d06cb5.mp3",
     "index.html": "/ucbattle/index.html",
-    "main.9f80097b.css.map": "/ucbattle/static/css/main.9f80097b.css.map",
-    "main.8946c18b.js.map": "/ucbattle/static/js/main.8946c18b.js.map",
+    "main.934b13cf.css.map": "/ucbattle/static/css/main.934b13cf.css.map",
+    "main.c7dec849.js.map": "/ucbattle/static/js/main.c7dec849.js.map",
     "787.c4165c3d.chunk.js.map": "/ucbattle/static/js/787.c4165c3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f80097b.css",
-    "static/js/main.8946c18b.js"
+    "static/css/main.934b13cf.css",
+    "static/js/main.c7dec849.js"
   ]
 }
