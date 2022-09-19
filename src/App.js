@@ -29,7 +29,7 @@ function App(){
   const [v5, setV5] = useState(false);
   const [ganharPerder, setGanharPerder] = useState(true);
   const [acertarErrar, setAcertarErrar] = useState(true);
-  const [narracao, setNarracao] = useState(true);
+  const [narracao, setNarracao] = useState(false);
 
   const alteraGanharPerder = () => {
     setGanharPerder(!ganharPerder);
