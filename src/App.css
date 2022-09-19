@@ -47,7 +47,7 @@ body{
   align-items: center;
   justify-content: center;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
 h1{
@@ -61,7 +61,7 @@ h1{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-top: 100px;
 }
 
@@ -136,6 +136,7 @@ h1{
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
+  margin-top: 100px;
 }
 
 .BotaoMenuI{
@@ -143,7 +144,6 @@ h1{
   height: 45px;
   border-radius: 8px;
   background-color: silver;
-  margin-top: 170px;
 }
 
 .BotaoOpcao{
@@ -151,84 +151,4 @@ h1{
   height: 45px;
   border-radius: 8px;
   background-color: rgb(215, 3, 215);
-  margin-top: 170px;
-}
-
-html{
-
-}
-
-body{
-
-}
-
-#root{
-
-}
-
-.Ucbattle--Container{
-
-}
-
-.Titulo--Container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.UcbattleBotoes{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.BotaoJogar{
-  width: 130px;
-  height: 45px;
-  border-radius: 8px;
-  background-color: rgb(54, 228, 54);
-}
-
-.BotaoZerarProgresso{
-  width: 130px;
-  height: 45px;
-  border-radius: 8px;
-  background-color: red;
-}
-
-.acertoOUerro{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.Botao_acertoOUerro{
-  width: 130px;
-  height: 45px;
-  border-radius: 8px;
-  margin-left: 20px;
-}
-
-.ganharOUperder{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.Botao_ganharOUperder{
-  width: 130px;
-  height: 45px;
-  border-radius: 8px;
-  margin-left: 20px;
-}
-
-.Botao_Voltar{
-  width: 130px;
-  height: 45px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-radius: 8px;
-  background-color: silver;
 }

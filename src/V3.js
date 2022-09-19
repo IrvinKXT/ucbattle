@@ -206,7 +206,7 @@ function V3(props){
                     <div className='vpv'>{vilao}</div>
                     <div className='hpv'>{heroi}</div>
                 </div>
-                <div className='charadas'>
+                <div className='charadasImg'>
                     <div>{charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>

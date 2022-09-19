@@ -124,7 +124,7 @@ function Treino() {
                         <div className='vpv'>{vilao}</div>
                         <div className='hpv'>{heroi}</div>
                     </div>
-                    <div className='charadas'>
+                    <div className='charadasFim'>
                         <div>{charada}</div>
                     </div>
                     <div className='hEr'>

@@ -3,11 +3,11 @@ import './Book.css';
 import { Link } from 'react-router-dom';
 
 function Book(){
-    var h = (window.innerHeight * 10) / 100;
+    var h = (window.innerHeight * 32.8) / 100;
     return (
-        <div className='Book' style={{height: h}}>
+        <div className='Book'>
             <h1>Escolha uma história para ler</h1>
-            <div className='HQOpcoes--Container'>
+            <div className='HQOpcoes--Container' style={{height: h}}>
                 <div className='OpRow1'>
                     <Link to='/hqcenarios' tabIndex={-1} className='Link'>
                         <button className='BotaoOpcoes'>Cenarios</button>

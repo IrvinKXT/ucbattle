@@ -202,8 +202,8 @@ function V5(props){
                     <div className='vpv'>{vilao}</div>
                     <div className='hpv'>{heroi}</div>
                 </div>
-                <div className='charadas'>
-                    <div>{charada}</div>
+                <div className='charadasImg'>
+                    <div className='charada'>{charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
                 <div className='dicas'><Dica 

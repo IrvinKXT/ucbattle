@@ -71,7 +71,6 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -134,7 +133,6 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -192,7 +190,6 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -245,7 +242,6 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>
@@ -293,7 +289,6 @@ function MenuPrin(props) {
               </Link>
               <small>Book</small>
             </div>
-            <button /*onClick={() => resetProgress()}*/ >Reset</button>
             <div className='Treino'>
               <Link to="/treino" tabIndex={-1} className='Link'>
               <button className='botaoTreino'>Treino</button>

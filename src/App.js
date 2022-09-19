@@ -29,6 +29,7 @@ function App(){
   const [v5, setV5] = useState(false);
   const [ganharPerder, setGanharPerder] = useState(true);
   const [acertarErrar, setAcertarErrar] = useState(true);
+  const [narracao, setNarracao] = useState(true);
 
   const alteraGanharPerder = () => {
     setGanharPerder(!ganharPerder);
@@ -36,6 +37,10 @@ function App(){
 
   const alteraAcertarErrar = () => {
     setAcertarErrar(!acertarErrar);
+  }
+
+  const alteraNarracao = () => {
+    setNarracao(!narracao);
   }
 
   const alteraV2 = () => {
@@ -63,18 +68,18 @@ function App(){
     <Routes>
       <Route exact path="ucbattle/" element={<Ucbattle v2={v2} resetProgress={() => resetProgress} />} />
       <Route exact path="/" element={<MenuPrin v2={v2} v3={v3} v4={v4} v5={v5} />} />
-      <Route exact path="V1" element={<V1 v2={v2} alteraV2={alteraV2} acertarErrar={acertarErrar} ganharPerder={ganharPerder} />} />
-      <Route exact path="V2" element={<V2 v3={v3} alteraV3={alteraV3} acertarErrar={acertarErrar} ganharPerder={ganharPerder} />} />
-      <Route exact path="V3" element={<V3 v4={v4} alteraV4={alteraV4} acertarErrar={acertarErrar} ganharPerder={ganharPerder} />} />
-      <Route exact path="V4" element={<V4 v5={v5} alteraV5={alteraV5} acertarErrar={acertarErrar} ganharPerder={ganharPerder} />} />
-      <Route exact path="V5" element={<V5 acertarErrar={acertarErrar} ganharPerder={ganharPerder} />} />
+      <Route exact path="V1" element={<V1 v2={v2} alteraV2={alteraV2} acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
+      <Route exact path="V2" element={<V2 v3={v3} alteraV3={alteraV3} acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
+      <Route exact path="V3" element={<V3 v4={v4} alteraV4={alteraV4} acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
+      <Route exact path="V4" element={<V4 v5={v5} alteraV5={alteraV5} acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
+      <Route exact path="V5" element={<V5 acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
       <Route exact path="Treino" element={<Treino />} />
       <Route exact path="Book" element={<Book />} />
       <Route exact path="HQCenarios" element={<HQCenarios />} />
       <Route exact path="HQDiagrama" element={<HQDiagrama />} />
       <Route exact path="HQGeneralizacao" element={<HQGeneralizacao />} />
       <Route exact path="HQInEx" element={<HQInEx />} />
-      <Route exact path="Opcoes" element={<Opcoes acertarErrar={acertarErrar} ganharPerder={ganharPerder} alteraAcertarErrar={alteraAcertarErrar} alteraGanharPerder={alteraGanharPerder} />} />
+      <Route exact path="Opcoes" element={<Opcoes acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} alteraAcertarErrar={alteraAcertarErrar} alteraGanharPerder={alteraGanharPerder} alteraNarracao={alteraNarracao} />} />
     </Routes>
     </BrowserRouter>
     )

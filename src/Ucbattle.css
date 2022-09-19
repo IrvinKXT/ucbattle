@@ -1,0 +1,25 @@
+.Titulo--Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.UcbattleBotoes{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.BotaoJogar{
+  width: 130px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: rgb(54, 228, 54);
+}
+
+.BotaoZerarProgresso{
+  width: 130px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: red;
+}

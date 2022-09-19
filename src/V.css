@@ -17,6 +17,22 @@ body{
   white-space: pre-line;
   height: 58vh;
   width: 100%;
+  font-size: 17.6px;
+}
+
+.charadasImg{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  white-space: pre-line;
+  height: 58vh;
+  width: 100%;
+  font-size: 17.6px;
+}
+
+.charada{
+  display: flex;
+  justify-content: center;
 }
 
 .charadasFim{
@@ -83,7 +99,7 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 100px;
+  padding: 77px;
 }
 
 .botaoMeJ{
@@ -104,6 +120,9 @@ body{
 }
 
 .Qimg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 90%;
   max-height: 90%;
 }

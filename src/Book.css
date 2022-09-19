@@ -1,24 +1,30 @@
 .HQ{
-    max-height: 65%;
-    max-width: 65%;
-    object-fit: contain;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.HQ--Container{
+.HQimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.BotaoVoltar--Container{
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .BotaoVoltar{
     width: 130px;
     height: 45px;
-    justify-content: flex-start;
-    align-items: flex-start;
     border-radius: 8px;
     background-color: silver;
+    margin-left: 10px;
 }
 
 .BotaoVoltarBook{
@@ -28,8 +34,7 @@
     height: 45px;
     border-radius: 8px;
     background-color: silver;
-    margin-top: 110px;
-    margin-left: 38.5px;
+    margin-left: 10px;
 }
 
 .Link{
@@ -41,6 +46,7 @@
     height: 45px;
     margin: 50px;
     border-radius: 8px;
+    background-color: aqua;
 }
 
 .OpRow1{
@@ -49,12 +55,13 @@
 
 .Book{
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .Voltar{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
-    margin-top: 35.5px;
-    margin-left: 5.5px;
+    height: 100%;
 }
