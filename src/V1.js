@@ -162,18 +162,18 @@ function V1(props){
                 <div className='charadasFim'>
                     <div>{charada}</div>
                 </div>
-                <HeR
-                vwin={vwin}
-                hwin={hwin}
-                hcor={hcor}
-                Habilidade={() => Habilidade} 
-                />
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
                     <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                     </Link>
                     <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                 </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={() => Habilidade} 
+                />
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}
@@ -202,18 +202,19 @@ function V1(props){
                 <div className='charadas' style={{fontSize: "20px"}}>
                     <div>{charada}</div>
                 </div>
-                <div className='dicas'><Dica 
-                dic={dicas[dica]} 
-                usou={usouh} 
-                pv={hpv}
-                desativou={desativah}
-                /></div>
                 <HeR
                 vwin={vwin}
                 hwin={hwin}
                 hcor={hcor}
                 Habilidade={() => Habilidade()} 
                 />
+                <div className='dicas'><Dica 
+                dic={dicas[dica]} 
+                usou={usouh} 
+                pv={hpv}
+                desativou={desativah}
+                /></div>
+                
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}

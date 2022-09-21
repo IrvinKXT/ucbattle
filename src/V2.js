@@ -8,6 +8,7 @@ import Correct from './components/correct.mp3';
 import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
+import HeR from './components/HeR';
 
 function V2(props){
     const [questao, setQuestao] = useState(0);
@@ -165,16 +166,18 @@ function V2(props){
                 <div className='charadasFim'>
                     <div>{charada}</div>
                 </div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}}>Habilidade</button>
-                    <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
-                </div>
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
                     <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                     </Link>
                     <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                 </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={() => Habilidade()} 
+                />
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}
@@ -203,18 +206,19 @@ function V2(props){
                 <div className='charadas'>
                     <div>{charada}</div>
                 </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={() => Habilidade()} 
+                />
                 <div className='dicas'><Dica 
                 dic={dicas[dica]} 
                 usou={usouh} 
                 pv={hpv}
                 desativou={desativah}
                 /></div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}} onClick={() => Habilidade()}>Habilidade</button>
-                    <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
-                    </Link>
-                </div>
+                
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}
@@ -240,6 +244,7 @@ function V2(props){
 
 const Questoes = [
     "Para o cenário do caso de uso de uma compra online a seguir, qual alternativa poderia preencher o passo que falta? \n" +
+    " \n" +
     "1. O cliente folheia o catálogo e seleciona itens para comprar \n" +
     "2. O cliente fecha a compra \n" +
     "3. O cliente escolhe a forma de entrega \n" +
@@ -252,6 +257,7 @@ const Questoes = [
     "Quantos cenários um caso de uso pode ter?",
     //---------------------------------------------------------
     "Para o cenário do caso de uso de inserir dinheiro numa máquina de bilhetes a seguir, qual alternativa poderia preencher o passo que falta?\n" +
+    " \n" +
     "1. ______________________________________________________\n" +
     "2. O Sistema mostra uma mensagem informando para o Cliente aguardar alguns instantes\n" +
     "3. O Sistema valida a nota de papel-moeda inserida\n" +
@@ -262,6 +268,7 @@ const Questoes = [
     "De que outro jeito pode ser chamado o Cenário Principal de Sucesso de um caso de uso?",
     //------------------------------------------------------------
     "Para o cenário do caso de uso de uma compra de tapetes a seguir, qual alternativa poderia preencher o passo que falta?\n" +
+    " \n" +
     "1.	Cliente busca o(s) tapete(s) que deseja por meio da barra de pesquisa e/ou os filtros disponíveis \n" +
     "2.	Sistema retorna todos os tapetes que atendem ao que foi buscado \n" +
     "3.	Cliente escolhe o(s) tapete(s) que deseja clicando em '+ carrinho' \n" +

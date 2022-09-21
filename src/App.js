@@ -73,7 +73,7 @@ function App(){
       <Route exact path="V3" element={<V3 v4={v4} alteraV4={alteraV4} acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
       <Route exact path="V4" element={<V4 v5={v5} alteraV5={alteraV5} acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
       <Route exact path="V5" element={<V5 acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
-      <Route exact path="Treino" element={<Treino />} />
+      <Route exact path="Treino" element={<Treino acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} />} />
       <Route exact path="Book" element={<Book />} />
       <Route exact path="HQCenarios" element={<HQCenarios />} />
       <Route exact path="HQDiagrama" element={<HQDiagrama />} />

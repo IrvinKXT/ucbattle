@@ -12,6 +12,7 @@ import Correct from './components/correct.mp3';
 import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
+import HeR from './components/HeR';
 
 function V5(props){
     const [questao, setQuestao] = useState(0);
@@ -167,16 +168,18 @@ function V5(props){
                 <div className='charadasFim'>
                     <div>{charada}</div>
                 </div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}} >Habilidade</button>
-                    <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
-                </div>
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
                     <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                     </Link>
                     <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                 </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={() => Habilidade} 
+                />
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}
@@ -206,18 +209,19 @@ function V5(props){
                     <div className='charada'>{charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
+                <HeR
+                vwin={vwin}
+                hwin={hwin}
+                hcor={hcor}
+                Habilidade={Habilidade} 
+                />
                 <div className='dicas'><Dica 
                 dic={dicas[dica]} 
                 usou={usouh} 
                 pv={hpv}
                 desativou={desativah}
                 /></div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{backgroundColor: hcor}} onClick={() => Habilidade()}>Habilidade</button>
-                    <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaohEr' style={{backgroundColor: '#FF0000'}}>Render-se</button>
-                    </Link>
-                </div>
+                
                 <div className='alternativas'>
                 <div className='alternativasR1'>
                     {renderAlternativa(0)}

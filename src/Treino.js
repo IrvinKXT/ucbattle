@@ -7,7 +7,7 @@ import Correct from './components/correct.mp3';
 import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 
-function Treino() {
+function Treino(props) {
     const [questao, setQuestao] = useState(0);
     const [alternativa, setAlternativa] = useState(0);
     const [dica, setDica] = useState(0);
@@ -51,8 +51,10 @@ function Treino() {
             }
 
             if (certo) {
-                let audio = new Audio(Correct);
-                audio.play();
+                if(props.acertarErrar){
+                    let audio = new Audio(Correct);
+                    audio.play();
+                }
                 if (vpv > 1) {
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -73,8 +75,10 @@ function Treino() {
                 }
             }
             else {
-                let audio = new Audio(Incorrect);
-                audio.play();
+                if(props.acertarErrar){
+                    let audio = new Audio(Incorrect);
+                    audio.play();
+                }
                 if (questao + 1 >= Questoes.length) {
                     setQuestao(0);
                 }
@@ -117,7 +121,9 @@ function Treino() {
         const heroi = "Herói PV: 4";
 
         if (hwin === true) {
-            victory.audio.play();
+            if(props.ganharPerder){
+                victory.audio.play();
+            }
             return (
                 <div className='vcontainer'>
                     <div className='pvs'>
