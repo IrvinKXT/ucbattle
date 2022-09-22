@@ -200,7 +200,7 @@ function V3(props){
         if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
             setHcor('#4791FF');
         }
-        if(desativah && hcor === '#0367FD'){
+        if(desativah && hcor === '#4791FF'){
             setHcor('#DEDEDE');
         }
         return(
