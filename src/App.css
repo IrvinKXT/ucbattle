@@ -41,6 +41,20 @@ body{
   background-color: #F9B300;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #F9B300;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid silver;  /* creates padding around scroll thumb */
+}
+
 .fases{
   display: flex;
   flex-direction: row;
@@ -144,6 +158,12 @@ h1{
   height: 45px;
   border-radius: 8px;
   background-color: silver;
+}
+
+.BotaoComoJogar{
+  width: 130px;
+  height: 45px;
+  border-radius: 8px;
 }
 
 .BotaoOpcao{

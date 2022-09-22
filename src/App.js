@@ -19,6 +19,7 @@ import HQGeneralizacao from './HQGeneralizacao';
 import HQInEx from './HQInEx';
 import Ucbattle from './Ucbattle';
 import Opcoes from './Opcoes';
+import ComoJogar from './ComoJogar';
 
 //<Route exact path="/" element={<MenuIni />} />
 
@@ -80,6 +81,7 @@ function App(){
       <Route exact path="HQGeneralizacao" element={<HQGeneralizacao />} />
       <Route exact path="HQInEx" element={<HQInEx />} />
       <Route exact path="Opcoes" element={<Opcoes acertarErrar={acertarErrar} ganharPerder={ganharPerder} narracao={narracao} alteraAcertarErrar={alteraAcertarErrar} alteraGanharPerder={alteraGanharPerder} alteraNarracao={alteraNarracao} />} />
+      <Route exact path="ComoJogar" element={<ComoJogar />} />
     </Routes>
     </BrowserRouter>
     )

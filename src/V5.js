@@ -137,8 +137,10 @@ function V5(props){
 
     function render(){
         let charada;
+        let parabens;
         if(hwin){
             charada = "Vencedor: Herói";
+            parabens = "Parabéns por derrotar todos os vilões! Obrigado por jogar!";
             updateAPIData();
         }
         else{
@@ -167,6 +169,7 @@ function V5(props){
                 </div>
                 <div className='charadasFim'>
                     <div>{charada}</div>
+                    <div>{parabens}</div>
                 </div>
                 <div className='botoesOpcoes'>
                     <Link to="/" tabIndex={-1} className='Link'>
@@ -194,7 +197,7 @@ function V5(props){
             );
         }
         if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
-            setHcor('#0367FD');
+            setHcor('#4791FF');
         }
         if(desativah && hcor === '#0367FD'){
             setHcor('#DEDEDE');

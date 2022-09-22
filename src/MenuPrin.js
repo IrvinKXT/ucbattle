@@ -4,7 +4,7 @@ import React, { /*useEffect, useState */} from 'react';
 //import axios from 'axios';
 
 function MenuPrin(props) {
-    console.log("Props: ", props.v2)
+    //console.log("Props: ", props.v2)
   //const [fases, setFases] = useState([]);
 
   /*const resetProgress = async () => {
@@ -82,6 +82,9 @@ function MenuPrin(props) {
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
             </Link>
+            <Link to="/comojogar" tabIndex={-1} className='Link'>
+              <button className='BotaoComoJogar'>Como Jogar</button>
+            </Link>
             <Link to="/opcoes" tabIndex={-1} className='Link'>
             <button className='BotaoOpcao'>Opções</button>
             </Link>
@@ -123,7 +126,7 @@ function MenuPrin(props) {
               </Link>
               <small>Vilão 4</small>
             </div>
-            <button className='botaoVB'>V5</button>
+            <button className='botaoVB'>V5-Bloqueado</button>
           </div>
 
           <div className='options'>
@@ -143,6 +146,9 @@ function MenuPrin(props) {
           <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/comojogar" tabIndex={-1} className='Link'>
+              <button className='BotaoComoJogar'>Como Jogar</button>
             </Link>
             <Link to="/opcoes" tabIndex={-1} className='Link'>
             <button className='BotaoOpcao'>Opções</button>
@@ -179,8 +185,8 @@ function MenuPrin(props) {
               </Link>
               <small>Vilão 3</small>
             </div>
-            <button className='botaoVB'>V4</button>
-            <button className='botaoVB'>V5</button>
+            <button className='botaoVB'>V4-Bloqueado</button>
+            <button className='botaoVB'>V5-Bloqueado</button>
           </div>
 
           <div className='options'>
@@ -200,6 +206,9 @@ function MenuPrin(props) {
           <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/comojogar" tabIndex={-1} className='Link'>
+              <button className='BotaoComoJogar'>Como Jogar</button>
             </Link>
             <Link to="/opcoes" tabIndex={-1} className='Link'>
             <button className='BotaoOpcao'>Opções</button>
@@ -230,9 +239,9 @@ function MenuPrin(props) {
               </Link>
               <small>Vilão 2</small>
             </div>
-            <button className='botaoVB'>V3</button>
-            <button className='botaoVB'>V4</button>
-            <button className='botaoVB'>V5</button>
+            <button className='botaoVB'>V3-Bloqueado</button>
+            <button className='botaoVB'>V4-Bloqueado</button>
+            <button className='botaoVB'>V5-Bloqueado</button>
           </div>
 
           <div className='options'>
@@ -252,6 +261,9 @@ function MenuPrin(props) {
           <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/comojogar" tabIndex={-1} className='Link'>
+              <button className='BotaoComoJogar'>Como Jogar</button>
             </Link>
             <Link to="/opcoes" tabIndex={-1} className='Link'>
             <button className='BotaoOpcao'>Opções</button>
@@ -276,10 +288,10 @@ function MenuPrin(props) {
               </Link>
               <small>Vilão 1</small>
             </div>
-            <button className='botaoVB'>V2</button>
-            <button className='botaoVB'>V3</button>
-            <button className='botaoVB'>V4</button>
-            <button className='botaoVB'>V5</button>
+            <button className='botaoVB'>V2-Bloqueado</button>
+            <button className='botaoVB'>V3-Bloqueado</button>
+            <button className='botaoVB'>V4-Bloqueado</button>
+            <button className='botaoVB'>V5-Bloqueado</button>
           </div>
 
           <div className='options'>
@@ -299,6 +311,9 @@ function MenuPrin(props) {
           <div className='Botoes--ultimaLinha'>
             <Link to="ucbattle/" tabIndex={-1} className='Link'>
               <button className='BotaoMenuI'>Menu Inicial</button>
+            </Link>
+            <Link to="/comojogar" tabIndex={-1} className='Link'>
+              <button className='BotaoComoJogar'>Como Jogar</button>
             </Link>
             <Link to="/opcoes" tabIndex={-1} className='Link'>
             <button className='BotaoOpcao'>Opções</button>

@@ -195,7 +195,7 @@ function V4(props){
             );
         }
         if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
-            setHcor('#0367FD');
+            setHcor('#4791FF');
         }
         if(desativah && hcor === '#0367FD'){
             setHcor('#DEDEDE');
@@ -283,15 +283,50 @@ const alts = [
 ];
 
 const alternativas = [
-    "Solicitar Reembolso","Validar Usuário","Pendurar Conta","Inicializar Sistema",
-    "Cliente","Banco","Técnico","Caixa",
-    "Sim, o ator Gerente","Sim, o ator Cliente","Não, apenas o próprio ator Funcionário","Sim, o ator Gerente mas apenas quando o caso de uso Pendurar Conta ocorrer",
-    "Autorizar","Capturar","Autorizar e Verificar","Capturar e Autorizar",
-    "Solicitar Reembolso","Validar Usuário","Pendurar Conta","Inicializar Sistema",
-    "Cliente","Banco","Técnico","Caixa",
-    "Apenas quando ocorrer o caso de uso Comprar Produtos ou o Solicitar Reembolso","Apenas quando os casos de uso que o incluem ocorrerem simultaneamente","Apenas quando ocorrer o caso de uso Comprar Produtos","Apenas quando algum dos casos de uso que o incluem ocorrer",
-    "Maquininha do vendedor","Banco do vendedor","Banco do cliente","Todos realizam a mesma quantidade",
-    "Maquininha do vendedor","Banco do vendedor","Banco do cliente","Todos realizam a mesma quantidade"
+    "Solicitar Reembolso",
+    "Validar Usuário",
+    "Pendurar Conta",
+    "Inicializar Sistema",
+    
+    "Cliente",
+    "Banco",
+    "Técnico",
+    "Caixa",
+    
+    "Sim, o ator Gerente",
+    "Sim, o ator Cliente",
+    "Não, apenas o próprio ator Funcionário",
+    "Sim, o ator Gerente mas apenas quando o caso de uso Pendurar Conta ocorrer",
+    
+    "Autorizar",
+    "Capturar",
+    "Autorizar e Verificar",
+    "Capturar e Autorizar",
+    
+    "Solicitar Reembolso",
+    "Validar Usuário",
+    "Pendurar Conta",
+    "Inicializar Sistema",
+    
+    "Cliente",
+    "Banco",
+    "Técnico",
+    "Caixa",
+    
+    "Apenas quando ocorrer o caso de uso Comprar Produtos ou o Solicitar Reembolso",
+    "Apenas quando os casos de uso que o incluem ocorrerem simultaneamente",
+    "Apenas quando ocorrer o caso de uso Comprar Produtos",
+    "Apenas quando algum dos casos de uso que o incluem ocorrer",
+    
+    "Maquininha do vendedor",
+    "Banco do vendedor",
+    "Banco do cliente",
+    "Todos realizam a mesma quantidade",
+    
+    "Maquininha do vendedor",
+    "Banco do vendedor",
+    "Banco do cliente",
+    "Todos realizam a mesma quantidade"
 ];
 const corretas = [2,5,8,15,17,22,27,28,33]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
 const dicas = [

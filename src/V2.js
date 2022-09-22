@@ -192,7 +192,7 @@ function V2(props){
             );
         }
         if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
-            setHcor('#0367FD');
+            setHcor('#4791FF');
         }
         if(desativah && hcor === '#0367FD'){
             setHcor('#DEDEDE');
@@ -244,7 +244,7 @@ function V2(props){
 
 const Questoes = [
     "Para o cenário do caso de uso de uma compra online a seguir, qual alternativa poderia preencher o passo que falta? \n" +
-    " \n" +
+    //" \n" +
     "1. O cliente folheia o catálogo e seleciona itens para comprar \n" +
     "2. O cliente fecha a compra \n" +
     "3. O cliente escolhe a forma de entrega \n" +
@@ -257,7 +257,7 @@ const Questoes = [
     "Quantos cenários um caso de uso pode ter?",
     //---------------------------------------------------------
     "Para o cenário do caso de uso de inserir dinheiro numa máquina de bilhetes a seguir, qual alternativa poderia preencher o passo que falta?\n" +
-    " \n" +
+    //" \n" +
     "1. ______________________________________________________\n" +
     "2. O Sistema mostra uma mensagem informando para o Cliente aguardar alguns instantes\n" +
     "3. O Sistema valida a nota de papel-moeda inserida\n" +
@@ -268,7 +268,7 @@ const Questoes = [
     "De que outro jeito pode ser chamado o Cenário Principal de Sucesso de um caso de uso?",
     //------------------------------------------------------------
     "Para o cenário do caso de uso de uma compra de tapetes a seguir, qual alternativa poderia preencher o passo que falta?\n" +
-    " \n" +
+    //" \n" +
     "1.	Cliente busca o(s) tapete(s) que deseja por meio da barra de pesquisa e/ou os filtros disponíveis \n" +
     "2.	Sistema retorna todos os tapetes que atendem ao que foi buscado \n" +
     "3.	Cliente escolhe o(s) tapete(s) que deseja clicando em '+ carrinho' \n" +
@@ -294,13 +294,40 @@ const Questoes = [
     "Ao final de um fluxo alternativo é correto afirmar:"
 ];
 const alternativas = [
-    "O cliente envia um e-mail confirmando a compra","O banco envia um e-mail confirmando a compra","O gerente envia um e-mail confirmando a compra","O sistema envia um e-mail confirmando a compra",
-    "Apenas 1","Menos que 10","Mais que 10","Quantos forem necessários",
-    "O Cliente pega a carteira","O Cliente insere uma nota de papel-moeda na máquina","O Cliente escolhe a opção de imprimir bilhete","O Cliente insere uma moeda na máquina",
-    "Fluxo de Exceção","Fluxo Principal","Fluxo Alternativo","Cenário Alternativo",
-    "Sistema avalia as informações recolhidas","Cliente avalia as informações recolhidas","Sistema retorna as informações preenchidas","Banco avalia as informações recolhidas",
-    "Um Cliente","Um Outro Caso de Uso","Um Gerente","Um Outro Sistema",
-    "Sempre informa que voltará para o primeiro passo do fluxo principal","Sempre informa que voltará para o último passo do fluxo principal","Caso volte ao fluxo principal, informa para qual passo irá retornar","Nunca retorna ao fluxo principal"
+    "O cliente envia um e-mail confirmando a compra",
+    "O banco envia um e-mail confirmando a compra",
+    "O gerente envia um e-mail confirmando a compra",
+    "O sistema envia um e-mail confirmando a compra",
+    
+    "Apenas 1",
+    "Menos que 10",
+    "Mais que 10",
+    "Quantos forem necessários",
+    
+    "O Cliente pega a carteira",
+    "O Cliente insere uma nota de papel-moeda na máquina",
+    "O Cliente escolhe a opção de imprimir bilhete",
+    "O Cliente insere uma moeda na máquina",
+    
+    "Fluxo de Exceção",
+    "Fluxo Principal",
+    "Fluxo Alternativo",
+    "Cenário Alternativo",
+    
+    "Sistema avalia as informações recolhidas",
+    "Cliente avalia as informações recolhidas",
+    "Sistema retorna as informações preenchidas",
+    "Banco avalia as informações recolhidas",
+    
+    "Um Cliente",
+    "Um Outro Caso de Uso",
+    "Um Gerente",
+    "Um Outro Sistema",
+    
+    "Sempre informa que voltará para o primeiro passo do fluxo principal",
+    "Sempre informa que voltará para o último passo do fluxo principal",
+    "Caso volte ao fluxo principal, informa para qual passo irá retornar",
+    "Nunca retorna ao fluxo principal"
 ];
 const corretas = [3,7,9,13,16,21,26]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
 const dicas = [

@@ -188,7 +188,7 @@ function V1(props){
             );
         }
         if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
-            setHcor('#0367FD');
+            setHcor('#4791FF');
         }
         if(desativah && hcor === '#0367FD'){
             setHcor('#DEDEDE');
@@ -240,14 +240,37 @@ const Questoes = [
     "O que representa o limite do sistema num diagrama de casos de uso?"
 ];
 const alternativas = [
-    "Um boneco palito","Uma elipse","Um retângulo","Um triângulo",
-    "Uma funcionalidade do sistema","Um botão","Uma interação do ator com o sistema","Um diagrama",
-    "Sempre ocorre quando o caso de uso base ocorre","Pode ou não ocorrer quando o caso de uso base ocorre","Sempre acontece imediatamente após o caso de uso base","Sempre acontece imediatamente antes do caso de uso base",
-    "Um retângulo","Um triângulo","Um boneco palito","Uma elipse",
-    "Sempre ocorre quando o caso de uso base ocorre","Se ele ocorrer, o caso de uso ocorrerá","Pode ou não ocorrer quando o caso de uso base ocorrer","Se ele ocorrer, o caso de uso base pode ou não ocorrer",
-    "Um triângulo","Uma elipse","Um boneco palito","Um retângulo"
+    "Um boneco palito",
+    "Uma elipse",
+    "Um retângulo",
+    "Um triângulo",
+
+    "Uma funcionalidade do sistema",
+    "Um botão",
+    "Uma interação do ator com o sistema",
+    "Um diagrama",
+
+    "Sempre ocorre quando o caso de uso base ocorre",
+    "Pode ou não ocorrer quando o caso de uso base ocorre",
+    "Sempre acontece imediatamente após o caso de uso base",
+    "Sempre acontece imediatamente antes do caso de uso base",
+
+    "Um retângulo",
+    "Um triângulo",
+    "Um boneco palito",
+    "Uma elipse",
+
+    "Sempre ocorre quando o caso de uso base ocorre",
+    "Se ele ocorrer, o caso de uso ocorrerá",
+    "Pode ou não ocorrer quando o caso de uso base ocorrer",
+    "Se ele ocorrer, o caso de uso base pode ou não ocorrer",
+
+    "Um triângulo",
+    "Uma elipse",
+    "Um boneco palito",
+    "Um retângulo"
 ];
-const corretas = [0,6,9,15,16,23]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
+const corretas = [0,6,9,15,16,23]; 
 const dicas = [
     "Dica: Lembra uma pessoa",
     "Dica: Está relacionado a interação",

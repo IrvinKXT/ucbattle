@@ -198,7 +198,7 @@ function V3(props){
             );
         }
         if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
-            setHcor('#0367FD');
+            setHcor('#4791FF');
         }
         if(desativah && hcor === '#0367FD'){
             setHcor('#DEDEDE');
@@ -282,14 +282,45 @@ const alts = [
 ];
 
 const alternativas = [
-    "Aplicativo Bancário","Terra dos Lanches","Terra dos Tapetes","Terra das Cadeiras",
-    "Viajante","Viajante e Máquina de venda de Bilhetes","Viajante, Máquina de venda de Bilhetes e Banco","Viajante e Banco",
-    "Comprar Tapete","Confirmar Venda","Confirmar o Despache do Produto","Rastrear Tapete",
-    "<<include>>","<<generalization>>","<<extend>>","<<use_case>>",
-    "Comprar Tapete","Confirmar Venda","Confirmar o Despache do Produto","Rastrear Tapete",
-    "1","2","3","4",
-    "<<include>>","<<generalization>>","<<extend>>","<<use_case>>",
-    "1","2","3","4"
+    "Aplicativo Bancário",
+    "Terra dos Lanches",
+    "Terra dos Tapetes",
+    "Terra das Cadeiras",
+    
+    "Viajante",
+    "Viajante e Máquina de venda de Bilhetes",
+    "Viajante, Máquina de venda de Bilhetes e Banco",
+    "Viajante e Banco",
+    
+    "Comprar Tapete",
+    "Confirmar Venda",
+    "Confirmar o Despache do Produto",
+    "Rastrear Tapete",
+    
+    "<<include>>",
+    "<<generalization>>",
+    "<<extend>>",
+    "<<use_case>>",
+    
+    "Comprar Tapete",
+    "Confirmar Venda",
+    "Confirmar o Despache do Produto",
+    "Rastrear Tapete",
+    
+    "1",
+    "2",
+    "3",
+    "4",
+    
+    "<<include>>",
+    "<<generalization>>",
+    "<<extend>>",
+    "<<use_case>>",
+    
+    "1",
+    "2",
+    "3",
+    "4"
 ];
 const corretas = [2,7,11,12,16,23,26,29]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
 const dicas = [

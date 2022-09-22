@@ -34,15 +34,15 @@ function Opcoes(props) {
                 <div className='Opc' style={{ height: h }}>
                     <div className='acertoOUerro'>
                         <p>Sons de acerto/erro: </p>
-                        <button className='Botao_acertoOUerro' onClick={() => altera1()} style={{ backgroundColor: acertarErrar ? "blue" : "#DEDEDE" }}>{acertarErrar ? "Ligado" : "Desligado"}</button>
+                        <button className='Botao_acertoOUerro' onClick={() => altera1()} style={{ backgroundColor: acertarErrar ? "#4791FF" : "#DEDEDE" }}>{acertarErrar ? "Ligado" : "Desligado"}</button>
                     </div>
                     <div className='ganharOUperder'>
                         <p>Músicas de vitória/derrota: </p>
-                        <button className='Botao_ganharOUperder' onClick={() => altera2()} style={{ backgroundColor: ganharPerder ? "blue" : "#DEDEDE" }}>{ganharPerder ? "Ligado" : "Desligado"}</button>
+                        <button className='Botao_ganharOUperder' onClick={() => altera2()} style={{ backgroundColor: ganharPerder ? "#4791FF" : "#DEDEDE" }}>{ganharPerder ? "Ligado" : "Desligado"}</button>
                     </div>
                     <div className='Narracao'>
                         <p>Narração das Perguntas: </p>
-                        <button className='Botao_Narracao' onClick={() => altera3()} style={{ backgroundColor: narracao ? "blue" : "#DEDEDE" }}>{narracao ? "Ligado" : "Desligado"}</button>
+                        <button className='Botao_Narracao' onClick={() => altera3()} style={{ backgroundColor: narracao ? "#4791FF" : "#DEDEDE" }}>{narracao ? "Ligado" : "Desligado"}</button>
                     </div>
                 </div>
                 <div className='VoltarOpc'>
