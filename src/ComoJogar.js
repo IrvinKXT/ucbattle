@@ -6,7 +6,7 @@ function ComoJogar(){
     return(
         <div className='ComoJogar--Container'>
             <div className='TituloCJ'>
-            <h1>Como Jogar</h1>
+            <h1 className='TituloCJ'>Como Jogar</h1>
             </div>
             <div className='Topico'>
             <h2>O que é o U.C. Battle?</h2>
@@ -57,7 +57,7 @@ function ComoJogar(){
             </p>
             </div>
             <div className='VoltarCJ'>
-            <Link to="/" tabIndex={-1} className='Link'>
+            <Link to="/ucbattle/" tabIndex={-1} className='Link'>
                 <button className='BotaoVoltarCJ'>Voltar</button>
             </Link>
             </div>

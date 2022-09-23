@@ -6,9 +6,9 @@ import { Link, /*useNavigate*/ } from 'react-router-dom';
 //import Aguardar from './components/Aguardar.js'
 //import App from './App';
 
-function Ucbattle(props){
+function Ucbattle(props) {
     //const [fases, setFases] = useState([]);
-   // const [aguardar, setAguardar] = useState(false);
+    // const [aguardar, setAguardar] = useState(false);
     //const navigate = useNavigate();
 
     /*useEffect(() => {
@@ -34,46 +34,58 @@ function Ucbattle(props){
         navigate("/");
       }*/
 
-      const resetProgress = () => {
+    const resetProgress = () => {
         window.location.reload();
-      }
+    }
 
-      var h = (window.innerHeight * 80) / 100;
+    var h = (window.innerHeight * 80) / 100;
 
-        if(props.v2){
-            return(
-                <div className='Ucbattle--Container' style={{height: h}}>
-                    <div className='Titulo--Container'>
-                        <h1>U.C. Battle</h1>
-                    </div>
-                    <div className='UcbattleBotoes' style={{height: h}}>
-                        <button className='BotaoZerarProgresso' onClick={() => resetProgress()}>Zerar Progresso</button>
-                        <Link to="/" tabIndex={-1} className='Link'>
-                            <button className='BotaoJogar'>Jogar</button>
-                        </Link>
-                    </div>
-                    <div className='Aguardar'>
-                       {/* <Aguardar
+    if (props.v2) {
+        return (
+            <div className='Ucbattle--Container' style={{ height: h }}>
+                <div className='Titulo--Container'>
+                    <h1>U.C. Battle</h1>
+                </div>
+                <div className='UcbattleBotoes' style={{ height: h }}>
+                    <button className='BotaoZerarProgresso' onClick={() => resetProgress()}>Zerar Progresso</button>
+                    <Link to="/" tabIndex={-1} className='Link'>
+                        <button className='BotaoJogar'>Jogar</button>
+                    </Link>
+                    <Link to="/comojogar" tabIndex={-1} className='Link'>
+                        <button className='BotaoComoJogar'>Como Jogar</button>
+                    </Link>
+                    <Link to='/book' tabIndex={-1} className='Link'>
+                        <button className='botaoBook'>Book</button>
+                    </Link>
+                </div>
+                <div className='Aguardar'>
+                    {/* <Aguardar
                         aguardar={aguardar}
             />*/}
-                    </div>
                 </div>
-            );
-        }
-        else{
-            return(
-                <div className='Ucbattle--Container' >
-                    <div className='Titulo--Container'>
-                        <h1>U.C. Battle</h1>
-                    </div>
-                    <div className='UcbattleBotoes' style={{height: h}}>
-                        <Link to="/" tabIndex={-1} className='Link'>
-                            <button className='BotaoJogar'>Jogar</button>
-                        </Link>
-                    </div>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div className='Ucbattle--Container' >
+                <div className='Titulo--Container'>
+                    <h1>U.C. Battle</h1>
                 </div>
-            );
-        }
+                <div className='UcbattleBotoes' style={{ height: h }}>
+                    <Link to="/" tabIndex={-1} className='Link'>
+                        <button className='BotaoJogar'>Jogar</button>
+                    </Link>
+                    <Link to="/comojogar" tabIndex={-1} className='Link'>
+                        <button className='BotaoComoJogar'>Como Jogar</button>
+                    </Link>
+                    <Link to='/book' tabIndex={-1} className='Link'>
+                        <button className='botaoBook'>Book</button>
+                    </Link>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Ucbattle;

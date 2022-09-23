@@ -1,0 +1,78 @@
+.Titulo--Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.UcbattleBotoes{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.BotaoJogar{
+  width: 130px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: rgb(54, 228, 54);
+}
+
+.BotaoZerarProgresso{
+  width: 130px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: red;
+}
+
+.AreaPerguntas{
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.BotaoSalvarPerguntas{
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.BotaoSalvarPerguntas input[type="text"] {
+  display: inline-block;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  height: 35px;
+  width: 500px;
+}
+
+.BotaoSalvarPerguntas input[type="submit"] {
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.ListaPerguntas {
+
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ListaPerguntas h2 {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+
+}
+
+.Pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

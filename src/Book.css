@@ -1,15 +1,19 @@
 .HQ{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .HQimg{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     max-height: 100%;
     max-width: 100%;
+    position:absolute;
+    left: 13.2%;
+    right: 13.2%;
     object-fit: contain;
 }
 
@@ -35,6 +39,26 @@
     border-radius: 8px;
     background-color: silver;
     margin-left: 10px;
+}
+
+.BotaoProximo{
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: cyan;
+    margin-right: 1%;
+}
+
+.BotaoAnterior{
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: cyan;
+    margin-left: 1%;
 }
 
 .Link{
