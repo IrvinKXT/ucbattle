@@ -8,8 +8,8 @@ import Qimg1_5_8 from './components/imgs/v5q1e5e8.png';
 import Qimg2 from './components/imgs/v5q2.png';
 import Qimg3_7_10 from './components/imgs/v5q3e7e10.png';
 import Qimg4_6_9 from './components/imgs/v5q4e6e9.png';
-import Correct from './components/correct.mp3';
-import Incorrect from './components/incorrect.mp3';
+//import Correct from './components/correct.mp3';
+//import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 import HeR from './components/HeR';
@@ -25,6 +25,7 @@ function V5(props){
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
+    const [acor] = useState('#6DF030');
     const [victory] = useState({audio: new Audio(Victory)});
     const [lose] = useState({audio: new Audio(Lose)});
     //const [fases, setFases] = useState([]);
@@ -80,10 +81,10 @@ function V5(props){
             }
 
             if(certo){
-                if(props.acertarErrar){
+                /*if(props.acertarErrar){
                     let audio = new Audio(Correct);
                     audio.play();
-                }
+                }*/
                 if(vpv > 1){
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -104,10 +105,10 @@ function V5(props){
                 }
             }
             else{
-                if(props.acertarErrar){
+                /*if(props.acertarErrar){
                     let audio = new Audio(Incorrect);
                     audio.play();
-                }
+                }*/
                 if(hpv > 1){
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
@@ -132,7 +133,22 @@ function V5(props){
     }
 
     function renderAlternativa(i){
-        return <Alternativa value={alternativas[alternativa + i]} indice={i} onClick={() => confereAlternativa(i)}/>
+        return <Alternativa
+         value0={alternativas[alternativa + 0]}
+         value1={alternativas[alternativa + 1]}
+         value2={alternativas[alternativa + 2]}
+         value3={alternativas[alternativa + 3]} 
+         indice={i} 
+         onClick={confereAlternativa}
+         vwin={vwin}
+         hwin={hwin}
+         acor={acor}
+         corretas={corretas}
+         alternativa={alternativa}
+         acertarErrar={props.acertarErrar}
+         //clicou={clicou}
+         //mudaClicou={() => mudaClicou()}
+         />
     }
 
     function render(){
@@ -183,16 +199,7 @@ function V5(props){
                 hcor={hcor}
                 Habilidade={() => Habilidade} 
                 />
-                <div className='alternativas'>
-                <div className='alternativasR1'>
-                    {renderAlternativa(0)}
-                    {renderAlternativa(1)}
-                </div>
-                <div className='alternativasR2'>
-                    {renderAlternativa(2)}
-                    {renderAlternativa(3)}
-                </div>
-                </div>
+                {renderAlternativa()}
             </div>
             );
         }
@@ -225,16 +232,7 @@ function V5(props){
                 desativou={desativah}
                 /></div>
                 
-                <div className='alternativas'>
-                <div className='alternativasR1'>
-                    {renderAlternativa(0)}
-                    {renderAlternativa(1)}
-                </div>
-                <div className='alternativasR2'>
-                    {renderAlternativa(2)}
-                    {renderAlternativa(3)}
-                </div>
-                </div>
+                {renderAlternativa()}
             </div>
         );
     }

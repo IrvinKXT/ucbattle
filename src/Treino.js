@@ -16,6 +16,7 @@ function Treino(props) {
     const [usouh, setUsouh] = useState(false);
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
+    const [acor] = useState('#6DF030');
     const [victory] = useState({audio: new Audio(Victory)});
 
     const Habilidade = () => {
@@ -51,10 +52,10 @@ function Treino(props) {
             }
 
             if (certo) {
-                if(props.acertarErrar){
+                /*if(props.acertarErrar){
                     let audio = new Audio(Correct);
                     audio.play();
-                }
+                }*/
                 if (vpv > 1) {
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
@@ -75,10 +76,10 @@ function Treino(props) {
                 }
             }
             else {
-                if(props.acertarErrar){
+                /*if(props.acertarErrar){
                     let audio = new Audio(Incorrect);
                     audio.play();
-                }
+                }*/
                 if (questao + 1 >= Questoes.length) {
                     setQuestao(0);
                 }
@@ -106,7 +107,22 @@ function Treino(props) {
     }
 
     function renderAlternativa(i) {
-        return <Alternativa value={alternativas[alternativa + i]} indice={i} onClick={() => confereAlternativa(i)} />
+        return <Alternativa
+         value0={alternativas[alternativa + 0]}
+         value1={alternativas[alternativa + 1]}
+         value2={alternativas[alternativa + 2]}
+         value3={alternativas[alternativa + 3]} 
+         indice={i} 
+         onClick={confereAlternativa}
+         //vwin={vwin}
+         hwin={hwin}
+         acor={acor}
+         corretas={corretas}
+         alternativa={alternativa}
+         acertarErrar={props.acertarErrar}
+         //clicou={clicou}
+         //mudaClicou={() => mudaClicou()}
+         />
     }
 
     function render() {
@@ -143,16 +159,7 @@ function Treino(props) {
                         </Link>
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
-                    <div className='alternativas'>
-                        <div className='alternativasR1'>
-                            {renderAlternativa(0)}
-                            {renderAlternativa(1)}
-                        </div>
-                        <div className='alternativasR2'>
-                            {renderAlternativa(2)}
-                            {renderAlternativa(3)}
-                        </div>
-                    </div>
+                    {renderAlternativa()}
                 </div>
             );
         }
@@ -183,16 +190,7 @@ function Treino(props) {
                         <button className='botaohEr' style={{ backgroundColor: '#FF0000' }}>Render-se</button>
                     </Link>
                 </div>
-                <div className='alternativas'>
-                    <div className='alternativasR1'>
-                        {renderAlternativa(0)}
-                        {renderAlternativa(1)}
-                    </div>
-                    <div className='alternativasR2'>
-                        {renderAlternativa(2)}
-                        {renderAlternativa(3)}
-                    </div>
-                </div>
+                {renderAlternativa()}
             </div>
         );
     }
