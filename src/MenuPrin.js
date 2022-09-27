@@ -126,7 +126,10 @@ function MenuPrin(props) {
             </Link>
             <small>Vilão 4</small>
           </div>
+          <div className='V'>
           <button className='botaoVB'>V5-Bloqueado</button>
+          <small>Vilão 5</small>
+          </div>
         </div>
 
         <div className='options'>
@@ -185,8 +188,14 @@ function MenuPrin(props) {
             </Link>
             <small>Vilão 3</small>
           </div>
+          <div className='V'>
           <button className='botaoVB'>V4-Bloqueado</button>
+          <small>Vilão 4</small>
+          </div>
+          <div className='V'>
           <button className='botaoVB'>V5-Bloqueado</button>
+          <small>Vilão 5</small>
+          </div>
         </div>
 
         <div className='options'>
@@ -239,9 +248,18 @@ function MenuPrin(props) {
             </Link>
             <small>Vilão 2</small>
           </div>
+          <div className='V'>
           <button className='botaoVB'>V3-Bloqueado</button>
+          <small>Vilão 3</small>
+          </div>
+          <div className='V'>
           <button className='botaoVB'>V4-Bloqueado</button>
+          <small>Vilão 4</small>
+          </div>
+          <div className='V'>
           <button className='botaoVB'>V5-Bloqueado</button>
+          <small>Vilão 5</small>
+          </div>
         </div>
 
         <div className='options'>
@@ -288,10 +306,22 @@ function MenuPrin(props) {
             </Link>
             <small>Vilão 1</small>
           </div>
+          <div className='V'>
           <button className='botaoVB'>V2-Bloqueado</button>
+          <small>Vilão 2</small>
+          </div>
+          <div className='V'>
           <button className='botaoVB'>V3-Bloqueado</button>
+          <small>Vilão 3</small>
+          </div>
+          <div className='V'>
           <button className='botaoVB'>V4-Bloqueado</button>
+          <small>Vilão 4</small>
+          </div>
+          <div className='V'>
           <button className='botaoVB'>V5-Bloqueado</button>
+          <small>Vilão 5</small>
+          </div>
         </div>
 
         <div className='options'>

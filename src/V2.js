@@ -211,7 +211,7 @@ function V2(props){
                     <div className='hpv'>{heroi}</div>
                 </div>
                 <div className='charadas'>
-                    <div>{charada}</div>
+                    <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                 </div>
                 <HeR
                 vwin={vwin}

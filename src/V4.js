@@ -214,7 +214,7 @@ function V4(props){
                     <div className='hpv'>{heroi}</div>
                 </div>
                 <div className='charadasImg'>
-                    <div>{charada}</div>
+                    <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
                 <HeR
