@@ -19,7 +19,7 @@ function Alternativa(props) {
         });
     }
 
-    const reset = async () => {
+    /*const reset = async () => {
         await delay(2);
         if (acor0 !== '#6DF030') {
             setAcor0('#6DF030');
@@ -34,7 +34,7 @@ function Alternativa(props) {
             setAcor3('#6DF030');
         }
         setClicou(false);
-    }
+    }*/
 
 
 

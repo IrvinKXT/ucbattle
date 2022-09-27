@@ -3,8 +3,8 @@ import './V.css';
 import { Link } from 'react-router-dom';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
-import Correct from './components/correct.mp3';
-import Incorrect from './components/incorrect.mp3';
+//import Correct from './components/correct.mp3';
+//import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 
 function Treino(props) {

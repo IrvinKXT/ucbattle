@@ -24,7 +24,7 @@ function V1(props){
     const [acor] = useState('#6DF030');
     const [victory] = useState({audio: new Audio(Victory)});
     const [lose] = useState({audio: new Audio(Lose)});
-    const [clicou, setClicou] = useState(false);
+    //const [clicou, setClicou] = useState(false);
     
     /*const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/2', {"id":"2","desbloqueado":true})
@@ -45,9 +45,9 @@ function V1(props){
         }
     }
 
-    const mudaClicou = () => {
+    /*const mudaClicou = () => {
         setClicou(true);
-    }
+    }*/
 
     const pausar = () => {
         victory.audio.pause();
