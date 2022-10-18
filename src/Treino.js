@@ -6,6 +6,7 @@ import Dica from './components/Dica';
 //import Correct from './components/correct.mp3';
 //import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
+import Corazon from './components/imgs/Corazon.png';
 
 function Treino(props) {
     const [questao, setQuestao] = useState(0);
@@ -17,12 +18,20 @@ function Treino(props) {
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
     const [acor] = useState('#6DF030');
-    const [victory] = useState({audio: new Audio(Victory)});
+    const [victory] = useState({ audio: new Audio(Victory) });
 
     const Habilidade = () => {
         if (4 <= 2 && desativah === false) {
             setUsouh(true);
         }
+    }
+
+    const Coracao = (index, max) => {
+        let row = [];
+        for (index; index < max; index++) {
+            row.push(<img className='CorazonImg' src={Corazon} alt='' />)
+        }
+        return row;
     }
 
     const pausar = () => {
@@ -108,21 +117,21 @@ function Treino(props) {
 
     function renderAlternativa(i) {
         return <Alternativa
-         value0={alternativas[alternativa + 0]}
-         value1={alternativas[alternativa + 1]}
-         value2={alternativas[alternativa + 2]}
-         value3={alternativas[alternativa + 3]} 
-         indice={i} 
-         onClick={confereAlternativa}
-         //vwin={vwin}
-         hwin={hwin}
-         acor={acor}
-         corretas={corretas}
-         alternativa={alternativa}
-         acertarErrar={props.acertarErrar}
-         //clicou={clicou}
-         //mudaClicou={() => mudaClicou()}
-         />
+            value0={alternativas[alternativa + 0]}
+            value1={alternativas[alternativa + 1]}
+            value2={alternativas[alternativa + 2]}
+            value3={alternativas[alternativa + 3]}
+            indice={i}
+            onClick={confereAlternativa}
+            //vwin={vwin}
+            hwin={hwin}
+            acor={acor}
+            corretas={corretas}
+            alternativa={alternativa}
+            acertarErrar={props.acertarErrar}
+        //clicou={clicou}
+        //mudaClicou={() => mudaClicou()}
+        />
     }
 
     function render() {
@@ -137,14 +146,14 @@ function Treino(props) {
         const heroi = "Herói PV: 4";
 
         if (hwin === true) {
-            if(props.ganharPerder){
+            if (props.ganharPerder) {
                 victory.audio.play();
             }
             return (
                 <div className='vcontainer'>
                     <div className='pvs'>
-                        <div className='vpv'>{vilao}</div>
-                        <div className='hpv'>{heroi}</div>
+                        <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                        <div className='hpv'>{heroi} {Coracao(0, 4)}</div>
                     </div>
                     <div className='charadasFim'>
                         <div>{charada}</div>
@@ -172,8 +181,8 @@ function Treino(props) {
         return (
             <div className='vcontainer'>
                 <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                    <div className='hpv'>{heroi} {Coracao(0, 4)}</div>
                 </div>
                 <div className='charadas'>
                     <div>{charada}</div>

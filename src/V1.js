@@ -9,6 +9,7 @@ import Dica from './components/Dica';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 import HeR from './components/HeR';
+import Corazon from './components/imgs/Corazon.png';
 
 function V1(props){
     const [questao, setQuestao] = useState(0);
@@ -34,6 +35,14 @@ function V1(props){
         if(hpv <= 2 && desativah === false){
             setUsouh(true);
         }
+    }
+
+    const Coracao = (index, max) => {
+        let row = [];
+        for(index; index < max; index++){
+            row.push(<img className='CorazonImg' src={Corazon} alt=''/>)
+        }
+        return row;
     }
 
     const arrumaCorH = () => {
@@ -180,8 +189,8 @@ function V1(props){
             return(
                 <div className='vcontainer'>
                 <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                    <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
                 </div>
                 <div className='charadasFim'>
                     <div>{charada}</div>
@@ -208,8 +217,8 @@ function V1(props){
         return(
             <div className='vcontainer'>
                 <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                    <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
                 </div>
                 <div className='charadas' style={{fontSize: "20px"}}>
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>

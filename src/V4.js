@@ -1,6 +1,6 @@
-import React, {/*useEffect, */useState} from 'react';
+import React, {/*useEffect, */useState } from 'react';
 import './V.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //import axios from 'axios';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
@@ -12,8 +12,9 @@ import Qimg4_8_9 from './components/imgs/V4Q4e8e9.png';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 import HeR from './components/HeR';
+import Corazon from './components/imgs/Corazon.png';
 
-function V4(props){
+function V4(props) {
     const [questao, setQuestao] = useState(0);
     const [alternativa, setAlternativa] = useState(0);
     const [dica, setDica] = useState(0);
@@ -25,27 +26,35 @@ function V4(props){
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
     const [acor] = useState('#6DF030');
-    const [victory] = useState({audio: new Audio(Victory)});
-    const [lose] = useState({audio: new Audio(Lose)});
+    const [victory] = useState({ audio: new Audio(Victory) });
+    const [lose] = useState({ audio: new Audio(Lose) });
     //const [fases, setFases] = useState([]);
 
-   /* useEffect(() => {
-            axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
-                .then(res => {
-                  const fase = res.data;
-                  setFases(fase);
-                })
-                .catch(error => console.log(error))
-    }, [])*/
+    /* useEffect(() => {
+             axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
+                 .then(res => {
+                   const fase = res.data;
+                   setFases(fase);
+                 })
+                 .catch(error => console.log(error))
+     }, [])*/
 
     /*const updateAPIData = async () => {
         await axios.put('https://62aa160c371180affbcf1820.mockapi.io/viloes/5', {"id":"5","desbloqueado":true})
     }*/
 
     const Habilidade = () => {
-        if(hpv <= 2 && desativah === false){
+        if (hpv <= 2 && desativah === false) {
             setUsouh(true);
         }
+    }
+
+    const Coracao = (index, max) => {
+        let row = [];
+        for(index; index < max; index++){
+            row.push(<img className='CorazonImg' src={Corazon} alt=''/>)
+        }
+        return row;
     }
 
     const pausar = () => {
@@ -70,166 +79,166 @@ function V4(props){
         setHcor('#DEDEDE');
     }
 
-    function confereAlternativa(i){
+    function confereAlternativa(i) {
         let certo = false;
-        if(vpv > 0 && hpv > 0){
-            for(let x = 0; x < corretas.length; x++){
-                if(i + alternativa === corretas[x]){
+        if (vpv > 0 && hpv > 0) {
+            for (let x = 0; x < corretas.length; x++) {
+                if (i + alternativa === corretas[x]) {
                     certo = true;
                 }
             }
 
-            if(certo){
+            if (certo) {
                 /*if(props.acertarErrar){
                     let audio = new Audio(Correct);
                     audio.play();
                 }*/
-                if(vpv > 1){
+                if (vpv > 1) {
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
                     setAlternativa(alternativa + 4)
                     setDica(dica + 1)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
                     }
                 }
-                else{
+                else {
                     setVpv(vpv - 1)
                     setHwin(true)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
-                    }                
+                    }
                 }
             }
-            else{
+            else {
                 /*if(props.acertarErrar){
                     let audio = new Audio(Incorrect);
                     audio.play();
                 }*/
-                if(hpv > 1){
+                if (hpv > 1) {
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
                     setAlternativa(alternativa + 4)
                     setDica(dica + 1)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
                     }
 
                 }
-                else{
+                else {
                     setHpv(hpv - 1)
                     setVwin(true)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
-                    }                
+                    }
                 }
             }
         }
     }
 
-    function renderAlternativa(i){
+    function renderAlternativa(i) {
         return <Alternativa
-         value0={alternativas[alternativa + 0]}
-         value1={alternativas[alternativa + 1]}
-         value2={alternativas[alternativa + 2]}
-         value3={alternativas[alternativa + 3]} 
-         indice={i} 
-         onClick={confereAlternativa}
-         vwin={vwin}
-         hwin={hwin}
-         acor={acor}
-         corretas={corretas}
-         alternativa={alternativa}
-         acertarErrar={props.acertarErrar}
-         //clicou={clicou}
-         //mudaClicou={() => mudaClicou()}
-         />
+            value0={alternativas[alternativa + 0]}
+            value1={alternativas[alternativa + 1]}
+            value2={alternativas[alternativa + 2]}
+            value3={alternativas[alternativa + 3]}
+            indice={i}
+            onClick={confereAlternativa}
+            vwin={vwin}
+            hwin={hwin}
+            acor={acor}
+            corretas={corretas}
+            alternativa={alternativa}
+            acertarErrar={props.acertarErrar}
+        //clicou={clicou}
+        //mudaClicou={() => mudaClicou()}
+        />
     }
 
-    function render(){
+    function render() {
         let charada;
-        if(hwin){
+        if (hwin) {
             charada = "Vencedor: Herói";
-            if(!props.v5){
+            if (!props.v5) {
                 props.alteraV5();
             }
         }
-        else{
-            if(vwin){
+        else {
+            if (vwin) {
                 charada = "Vencedor: Vilão";
             }
-            else{
+            else {
                 charada = Questoes[questao];
             }
         }
         const vilao = "Vilão PV: " + vpv;
         const heroi = "Herói PV: " + hpv;
 
-        if(hwin === true || vwin === true){
-            if(hwin && props.ganharPerder){
+        if (hwin === true || vwin === true) {
+            if (hwin && props.ganharPerder) {
                 victory.audio.play();
             }
-            else if(vwin && props.ganharPerder){
+            else if (vwin && props.ganharPerder) {
                 lose.audio.play();
             }
-            return(
+            return (
                 <div className='vcontainer'>
-                <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='pvs'>
+                        <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                        <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
+                    </div>
+                    <div className='charadasFim'>
+                        <div>{charada}</div>
+                    </div>
+                    <div className='botoesOpcoes'>
+                        <Link to="/" tabIndex={-1} className='Link'>
+                            <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
+                        </Link>
+                        <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
+                    </div>
+                    <HeR
+                        vwin={vwin}
+                        hwin={hwin}
+                        hcor={hcor}
+                        Habilidade={() => Habilidade}
+                    />
+                    {renderAlternativa()}
                 </div>
-                <div className='charadasFim'>
-                    <div>{charada}</div>
-                </div>
-                <div className='botoesOpcoes'>
-                    <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
-                    </Link>
-                    <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
-                </div>
-                <HeR
-                vwin={vwin}
-                hwin={hwin}
-                hcor={hcor}
-                Habilidade={() => Habilidade} 
-                />
-                {renderAlternativa()}
-            </div>
             );
         }
-        if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
+        if (!desativah && hpv <= 2 && hcor === '#DEDEDE') {
             setHcor('#4791FF');
         }
-        if(desativah && hcor === '#4791FF'){
+        if (desativah && hcor === '#4791FF') {
             setHcor('#DEDEDE');
         }
-        return(
+        return (
             <div className='vcontainer'>
                 <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                    <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
                 </div>
                 <div className='charadasImg'>
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
                 <HeR
-                vwin={vwin}
-                hwin={hwin}
-                hcor={hcor}
-                Habilidade={Habilidade} 
+                    vwin={vwin}
+                    hwin={hwin}
+                    hcor={hcor}
+                    Habilidade={Habilidade}
                 />
-                <div className='dicas'><Dica 
-                dic={dicas[dica]} 
-                usou={usouh} 
-                pv={hpv}
-                desativou={desativah}
+                <div className='dicas'><Dica
+                    dic={dicas[dica]}
+                    usou={usouh}
+                    pv={hpv}
+                    desativou={desativah}
                 /></div>
-                
+
                 {renderAlternativa()}
             </div>
         );
@@ -237,9 +246,9 @@ function V4(props){
 
     //Para combater trapaça
     //if(fases.length > 0){
-       // if(fases[3].desbloqueado){
-            return render();
-      //  }
+    // if(fases[3].desbloqueado){
+    return render();
+    //  }
     //}
     //return render();
 }
@@ -285,48 +294,48 @@ const alternativas = [
     "Validar Usuário",
     "Pendurar Conta",
     "Inicializar Sistema",
-    
+
     "Cliente",
     "Banco",
     "Técnico",
     "Caixa",
-    
+
     "Sim, o ator Gerente",
     "Sim, o ator Cliente",
     "Não, apenas o próprio ator Funcionário",
     "Sim, o ator Gerente mas apenas quando o caso de uso Pendurar Conta ocorrer",
-    
+
     "Autorizar",
     "Capturar",
     "Autorizar e Verificar",
     "Capturar e Autorizar",
-    
+
     "Solicitar Reembolso",
     "Validar Usuário",
     "Pendurar Conta",
     "Inicializar Sistema",
-    
+
     "Cliente",
     "Banco",
     "Técnico",
     "Caixa",
-    
+
     "Apenas quando ocorrer o caso de uso Comprar Produtos ou o Solicitar Reembolso",
     "Apenas quando os casos de uso que o incluem ocorrerem simultaneamente",
     "Apenas quando ocorrer o caso de uso Comprar Produtos",
     "Apenas quando algum dos casos de uso que o incluem ocorrer",
-    
+
     "Maquininha do vendedor",
     "Banco do vendedor",
     "Banco do cliente",
     "Todos realizam a mesma quantidade",
-    
+
     "Maquininha do vendedor",
     "Banco do vendedor",
     "Banco do cliente",
     "Todos realizam a mesma quantidade"
 ];
-const corretas = [2,5,8,15,17,22,27,28,33]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
+const corretas = [2, 5, 8, 15, 17, 22, 27, 28, 33]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
 const dicas = [
     "Dica: Isso é característico de um extend",
     "Dica: Repare na quantidade de linhas saindo de cada ator",

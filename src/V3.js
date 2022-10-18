@@ -1,6 +1,6 @@
-import React, {/*useEffect, */useState} from 'react';
+import React, {/*useEffect, */useState } from 'react';
 import './V.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //import axios from 'axios';
 import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
@@ -15,8 +15,9 @@ import Qimg7 from './components/imgs/V3Q7.png';
 import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 import HeR from './components/HeR';
+import Corazon from './components/imgs/Corazon.png';
 
-function V3(props){
+function V3(props) {
     const [questao, setQuestao] = useState(0);
     const [alternativa, setAlternativa] = useState(0);
     const [dica, setDica] = useState(0);
@@ -28,8 +29,8 @@ function V3(props){
     const [desativah, setDesativah] = useState(false);
     const [hcor, setHcor] = useState('#DEDEDE');
     const [acor] = useState('#6DF030');
-    const [victory] = useState({audio: new Audio(Victory)});
-    const [lose] = useState({audio: new Audio(Lose)});
+    const [victory] = useState({ audio: new Audio(Victory) });
+    const [lose] = useState({ audio: new Audio(Lose) });
     //const [fases, setFases] = useState([]);
 
     /*useEffect(() => {
@@ -46,9 +47,17 @@ function V3(props){
     }*/
 
     const Habilidade = () => {
-        if(hpv <= 2 && desativah === false){
+        if (hpv <= 2 && desativah === false) {
             setUsouh(true);
         }
+    }
+
+    const Coracao = (index, max) => {
+        let row = [];
+        for(index; index < max; index++){
+            row.push(<img className='CorazonImg' src={Corazon} alt=''/>)
+        }
+        return row;
     }
 
     const pausar = () => {
@@ -73,176 +82,176 @@ function V3(props){
         setHcor('#DEDEDE');
     }
 
-    function confereAlternativa(i){
+    function confereAlternativa(i) {
         let certo = false;
-        if(vpv > 0 && hpv > 0){
-            for(let x = 0; x < corretas.length; x++){
-                if(i + alternativa === corretas[x]){
+        if (vpv > 0 && hpv > 0) {
+            for (let x = 0; x < corretas.length; x++) {
+                if (i + alternativa === corretas[x]) {
                     certo = true;
                 }
             }
 
-            if(certo){
+            if (certo) {
                 /*if(props.acertarErrar){
                     let audio = new Audio(Correct);
                     audio.play();
                 }*/
-                if(vpv > 1){
+                if (vpv > 1) {
                     setVpv(vpv - 1)
                     setQuestao(questao + 1)
                     setAlternativa(alternativa + 4)
                     setDica(dica + 1)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
                     }
                 }
-                else{
+                else {
                     setVpv(vpv - 1)
                     setHwin(true)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
-                    }                
+                    }
                 }
             }
-            else{
+            else {
                 /*if(props.acertarErrar){
                     let audio = new Audio(Incorrect);
                     audio.play();
                 }*/
-                if(hpv > 1){
+                if (hpv > 1) {
                     setHpv(hpv - 1)
                     setQuestao(questao + 1)
                     setAlternativa(alternativa + 4)
                     setDica(dica + 1)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
                     }
 
                 }
-                else{
+                else {
                     setHpv(hpv - 1)
                     setVwin(true)
-                    if(usouh){
+                    if (usouh) {
                         setDesativah(true)
                         setUsouh(false)
-                    }                
+                    }
                 }
             }
         }
     }
 
-    function renderAlternativa(i){
+    function renderAlternativa(i) {
         return <Alternativa
-         value0={alternativas[alternativa + 0]}
-         value1={alternativas[alternativa + 1]}
-         value2={alternativas[alternativa + 2]}
-         value3={alternativas[alternativa + 3]} 
-         indice={i} 
-         onClick={confereAlternativa}
-         vwin={vwin}
-         hwin={hwin}
-         acor={acor}
-         corretas={corretas}
-         alternativa={alternativa}
-         acertarErrar={props.acertarErrar}
-         //clicou={clicou}
-         //mudaClicou={() => mudaClicou()}
-         />
+            value0={alternativas[alternativa + 0]}
+            value1={alternativas[alternativa + 1]}
+            value2={alternativas[alternativa + 2]}
+            value3={alternativas[alternativa + 3]}
+            indice={i}
+            onClick={confereAlternativa}
+            vwin={vwin}
+            hwin={hwin}
+            acor={acor}
+            corretas={corretas}
+            alternativa={alternativa}
+            acertarErrar={props.acertarErrar}
+        //clicou={clicou}
+        //mudaClicou={() => mudaClicou()}
+        />
     }
 
-    function render(){
+    function render() {
         let charada;
-        if(hwin){
+        if (hwin) {
             charada = "Vencedor: Herói";
-            if(!props.v4){
+            if (!props.v4) {
                 props.alteraV4();
             }
         }
-        else{
-            if(vwin){
+        else {
+            if (vwin) {
                 charada = "Vencedor: Vilão";
             }
-            else{
+            else {
                 charada = Questoes[questao];
             }
         }
         const vilao = "Vilão PV: " + vpv;
         const heroi = "Herói PV: " + hpv;
 
-        if(hwin === true || vwin === true){
-            if(hwin && props.ganharPerder){
+        if (hwin === true || vwin === true) {
+            if (hwin && props.ganharPerder) {
                 victory.audio.play();
             }
-            else if(vwin && props.ganharPerder){
+            else if (vwin && props.ganharPerder) {
                 lose.audio.play();
             }
-            return(
+            return (
                 <div className='vcontainer'>
-                <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='pvs'>
+                        <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                        <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
+                    </div>
+                    <div className='charadasFim'>
+                        <div>{charada}</div>
+                    </div>
+                    <div className='botoesOpcoes'>
+                        <Link to="/" tabIndex={-1} className='Link'>
+                            <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
+                        </Link>
+                        <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
+                    </div>
+                    <HeR
+                        vwin={vwin}
+                        hwin={hwin}
+                        hcor={hcor}
+                        Habilidade={() => Habilidade}
+                    />
+                    {renderAlternativa()}
                 </div>
-                <div className='charadasFim'>
-                    <div>{charada}</div>
-                </div>
-                <div className='botoesOpcoes'>
-                    <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
-                    </Link>
-                    <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
-                </div>
-                <HeR
-                vwin={vwin}
-                hwin={hwin}
-                hcor={hcor}
-                Habilidade={() => Habilidade} 
-                />
-                {renderAlternativa()}
-            </div>
             );
         }
-        if(!desativah && hpv <= 2 && hcor === '#DEDEDE'){
+        if (!desativah && hpv <= 2 && hcor === '#DEDEDE') {
             setHcor('#4791FF');
         }
-        if(desativah && hcor === '#4791FF'){
+        if (desativah && hcor === '#4791FF') {
             setHcor('#DEDEDE');
         }
-        return(
+        return (
             <div className='vcontainer'>
                 <div className='pvs'>
-                    <div className='vpv'>{vilao}</div>
-                    <div className='hpv'>{heroi}</div>
+                    <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
+                    <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
                 </div>
                 <div className='charadasImg'>
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
                 <HeR
-                vwin={vwin}
-                hwin={hwin}
-                hcor={hcor}
-                Habilidade={Habilidade} 
+                    vwin={vwin}
+                    hwin={hwin}
+                    hcor={hcor}
+                    Habilidade={Habilidade}
                 />
-                <div className='dicas'><Dica 
-                dic={dicas[dica]} 
-                usou={usouh} 
-                pv={hpv}
-                desativou={desativah}
+                <div className='dicas'><Dica
+                    dic={dicas[dica]}
+                    usou={usouh}
+                    pv={hpv}
+                    desativou={desativah}
                 /></div>
-                
+
                 {renderAlternativa()}
             </div>
         );
     }
 
     //Para combater trapaça
-   // if(fases.length > 0){
-     //   if(fases[2].desbloqueado){
-            return render();
-     //   }
+    // if(fases.length > 0){
+    //   if(fases[2].desbloqueado){
+    return render();
+    //   }
     //}
     //return render();
 }
@@ -284,43 +293,43 @@ const alternativas = [
     "Terra dos Lanches",
     "Terra dos Tapetes",
     "Terra das Cadeiras",
-    
+
     "Viajante",
     "Viajante e Máquina de venda de Bilhetes",
     "Viajante, Máquina de venda de Bilhetes e Banco",
     "Viajante e Banco",
-    
+
     "Comprar Tapete",
     "Confirmar Venda",
     "Confirmar o Despache do Produto",
     "Rastrear Tapete",
-    
+
     "<<include>>",
     "<<generalization>>",
     "<<extend>>",
     "<<use_case>>",
-    
+
     "Comprar Tapete",
     "Confirmar Venda",
     "Confirmar o Despache do Produto",
     "Rastrear Tapete",
-    
+
     "1",
     "2",
     "3",
     "4",
-    
+
     "<<include>>",
     "<<generalization>>",
     "<<extend>>",
     "<<use_case>>",
-    
+
     "1",
     "2",
     "3",
     "4"
 ];
-const corretas = [2,7,11,12,16,23,26,29]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
+const corretas = [2, 7, 11, 12, 16, 23, 26, 29]; //MUDAR O X DO CONFEREALTERNATIVA PARA CADA VILÃO
 const dicas = [
     "Dica: Está relacionado com o que se pode comprar ali",
     "Dica: Os atores são representados por bonecos palito",

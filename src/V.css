@@ -4,6 +4,7 @@ body{
 
 .pvs{
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-top: 3px;
   font-size: 18px;
@@ -89,10 +90,16 @@ body{
   }
 
 .hpv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 2px;
 }
 
 .vpv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 2px;
 }
 
