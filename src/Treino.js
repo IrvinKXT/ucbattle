@@ -142,8 +142,8 @@ function Treino(props) {
         else {
             charada = Questoes[questao];
         }
-        const vilao = "Vilão PV: " + vpv;
-        const heroi = "Herói PV: 4";
+        const vilao = "Vilão"
+        const heroi = "Herói";
 
         if (hwin === true) {
             if (props.ganharPerder) {
@@ -153,7 +153,7 @@ function Treino(props) {
                 <div className='vcontainer'>
                     <div className='pvs'>
                         <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
-                        <div className='hpv'>{heroi} {Coracao(0, 4)}</div>
+                        <div className='hpv'>{Coracao(0, 4)} {heroi}</div>
                     </div>
                     <div className='charadasFim'>
                         <div>{charada}</div>
@@ -182,7 +182,7 @@ function Treino(props) {
             <div className='vcontainer'>
                 <div className='pvs'>
                     <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
-                    <div className='hpv'>{heroi} {Coracao(0, 4)}</div>
+                    <div className='hpv'>{Coracao(0, 4)} {heroi}</div>
                 </div>
                 <div className='charadas'>
                     <div>{charada}</div>

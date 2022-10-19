@@ -54,8 +54,8 @@ function V3(props) {
 
     const Coracao = (index, max) => {
         let row = [];
-        for(index; index < max; index++){
-            row.push(<img className='CorazonImg' src={Corazon} alt=''/>)
+        for (index; index < max; index++) {
+            row.push(<img className='CorazonImg' src={Corazon} alt='' />)
         }
         return row;
     }
@@ -178,8 +178,8 @@ function V3(props) {
                 charada = Questoes[questao];
             }
         }
-        const vilao = "Vilão PV: " + vpv;
-        const heroi = "Herói PV: " + hpv;
+        const vilao = "Vilão";
+        const heroi = "Herói";
 
         if (hwin === true || vwin === true) {
             if (hwin && props.ganharPerder) {
@@ -192,7 +192,7 @@ function V3(props) {
                 <div className='vcontainer'>
                     <div className='pvs'>
                         <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
-                        <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
+                        <div className='hpv'> {Coracao(0, hpv)}{heroi}</div>
                     </div>
                     <div className='charadasFim'>
                         <div>{charada}</div>
@@ -223,7 +223,7 @@ function V3(props) {
             <div className='vcontainer'>
                 <div className='pvs'>
                     <div className='vpv'>{vilao} {Coracao(0, vpv)}</div>
-                    <div className='hpv'>{heroi} {Coracao(0, hpv)}</div>
+                    <div className='hpv'> {Coracao(0, hpv)}{heroi}</div>
                 </div>
                 <div className='charadasImg'>
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>
