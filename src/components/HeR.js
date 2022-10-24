@@ -16,7 +16,7 @@ function HeR(props) {
             <div className='hEr'>
                 <button className='botaohEr' style={{ backgroundColor: props.hcor }} onClick={props.Habilidade}>Habilidade</button>
                 <Link to="/" tabIndex={-1} className='Link'>
-                    <button className='botaohEr' style={{ backgroundColor: '#FF0000' }}>Render-se</button>
+                    <button className='botaohEr' style={{ backgroundColor: '#FF0000' }} onClick={props.stop}>Render-se</button>
                 </Link>
             </div>
         );
