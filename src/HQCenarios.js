@@ -7,19 +7,53 @@ import HQ3 from './components/imgs/HQCenarios/Slide5.jpg';
 import HQ4 from './components/imgs/HQCenarios/Slide6.jpg';
 import HQ5 from './components/imgs/HQCenarios/Slide7.jpg';
 import HQ6 from './components/imgs/HQCenarios/Slide8.jpg';
+import Q1 from './components/audios/Cenarios1.m4a';
+import Q2 from './components/audios/Cenarios2.m4a';
+import Q3 from './components/audios/Cenarios3.m4a';
+import Q4 from './components/audios/Cenarios4.m4a';
+import Q5 from './components/audios/Cenarios5.m4a';
+import Q6 from './components/audios/Cenarios6.m4a';
 
-function HQCenarios() {
+function HQCenarios(props) {
     const [quadrinho, setQuadrinho] = useState(0);
+    const [q1] = useState({ audio: new Audio(Q1) });
+    const [q2] = useState({ audio: new Audio(Q2) });
+    const [q3] = useState({ audio: new Audio(Q3) });
+    const [q4] = useState({ audio: new Audio(Q4) });
+    const [q5] = useState({ audio: new Audio(Q5) });
+    const [q6] = useState({ audio: new Audio(Q6) });
     var h = (window.innerHeight * 80) / 100;
+
+    const narracao = [
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6
+    ];
+
+    if (props.narracao) {
+        narracao[quadrinho].audio.play();
+    }
+
+    const pausar = () => {
+        narracao[quadrinho].audio.pause();
+        narracao[quadrinho].audio.currentTime = 0;
+    }
 
     const Anterior = () => {
         if (quadrinho > 0) {
+            narracao[quadrinho].audio.pause();
+            narracao[quadrinho].audio.currentTime = 0;
             setQuadrinho(quadrinho - 1);
         }
     }
 
     const Proximo = () => {
         if (quadrinho < Quadrinhos.length - 1) {
+            narracao[quadrinho].audio.pause();
+            narracao[quadrinho].audio.currentTime = 0;
             setQuadrinho(quadrinho + 1);
         }
     }
@@ -61,7 +95,7 @@ function HQCenarios() {
                 </div>
                 <div className='BotaoVoltar--Container'>
                     <Link to='/book' tabIndex={-1} className='Link'>
-                        <button className='BotaoVoltar'>Voltar</button>
+                        <button className='BotaoVoltar' onClick={() => pausar()}>Voltar</button>
                     </Link>
                 </div>
             </div>

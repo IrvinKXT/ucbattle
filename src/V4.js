@@ -13,6 +13,15 @@ import Victory from './components/victory.mp3';
 import Lose from './components/lose.mp3';
 import HeR from './components/HeR';
 import Corazon from './components/imgs/Corazon.png';
+import Q1 from './components/audios/V4Q1.m4a'
+import Q2 from './components/audios/V4Q2.m4a'
+import Q3 from './components/audios/V4Q3.m4a'
+import Q4 from './components/audios/V4Q4.m4a'
+import Q5 from './components/audios/V4Q5.m4a'
+import Q6 from './components/audios/V4Q6.m4a'
+import Q7 from './components/audios/V4Q7.m4a'
+import Q8 from './components/audios/V4Q8.m4a'
+import Q9 from './components/audios/V4Q9.m4a'
 
 function V4(props) {
     const [questao, setQuestao] = useState(0);
@@ -29,6 +38,43 @@ function V4(props) {
     const [victory] = useState({ audio: new Audio(Victory) });
     const [lose] = useState({ audio: new Audio(Lose) });
     //const [fases, setFases] = useState([]);
+    const [q1] = useState({audio: new Audio(Q1)});
+    const [q2] = useState({audio: new Audio(Q2)});
+    const [q3] = useState({audio: new Audio(Q3)});
+    const [q4] = useState({audio: new Audio(Q4)});
+    const [q5] = useState({audio: new Audio(Q5)});
+    const [q6] = useState({audio: new Audio(Q6)});
+    const [q7] = useState({audio: new Audio(Q7)});
+    const [q8] = useState({audio: new Audio(Q8)});
+    const [q9] = useState({audio: new Audio(Q9)});
+
+    const narracao = [
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6,
+        q7,
+        q8,
+        q9
+    ];
+
+    const narradica = [
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6,
+        q7,
+        q8,
+        q9
+    ];
+
+    const playdica = () => {
+        narradica[dica].audio.play();
+    }
 
     /* useEffect(() => {
              axios.get('https://62aa160c371180affbcf1820.mockapi.io/viloes')
@@ -45,6 +91,8 @@ function V4(props) {
 
     const Habilidade = () => {
         if (hpv <= 2 && desativah === false) {
+            pausar();
+            playdica();
             setUsouh(true);
         }
     }
@@ -60,6 +108,10 @@ function V4(props) {
     const pausar = () => {
         victory.audio.pause();
         lose.audio.pause();
+        narracao[questao].audio.pause();
+        narracao[questao].audio.currentTime = 0;
+        narradica[dica].audio.pause();
+        narradica[dica].audio.currentTime = 0;
     }
 
     const jogarNovamente = () => {
@@ -80,6 +132,10 @@ function V4(props) {
     }
 
     function confereAlternativa(i) {
+        narracao[questao].audio.pause();
+        narracao[questao].audio.currentTime = 0;
+        narradica[dica].audio.pause();
+        narradica[dica].audio.currentTime = 0;
         let certo = false;
         if (vpv > 0 && hpv > 0) {
             for (let x = 0; x < corretas.length; x++) {
@@ -160,6 +216,10 @@ function V4(props) {
     }
 
     function render() {
+        if(props.narracao && !hwin && !vwin && !usouh){
+            //console.log("cont: " + questao);
+            narracao[questao].audio.play();
+        }
         let charada;
         if (hwin) {
             charada = "Vencedor: Herói";
@@ -231,6 +291,7 @@ function V4(props) {
                     hwin={hwin}
                     hcor={hcor}
                     Habilidade={Habilidade}
+                    stop={() => pausar()}
                 />
                 <div className='dicas'><Dica
                     dic={dicas[dica]}

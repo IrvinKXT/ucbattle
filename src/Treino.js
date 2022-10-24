@@ -7,6 +7,13 @@ import Dica from './components/Dica';
 //import Incorrect from './components/incorrect.mp3';
 import Victory from './components/victory.mp3';
 import Corazon from './components/imgs/Corazon.png';
+import Q1 from './components/audios/V1Q1.m4a'
+import Q2 from './components/audios/V1Q2.m4a'
+import Q3 from './components/audios/V1Q3.m4a'
+import Q4 from './components/audios/V1Q4.m4a'
+import Q5 from './components/audios/V1Q5.m4a'
+import Q6 from './components/audios/V1Q6.m4a'
+import HeR from './components/HeR';
 
 function Treino(props) {
     const [questao, setQuestao] = useState(0);
@@ -19,6 +26,21 @@ function Treino(props) {
     const [hcor, setHcor] = useState('#DEDEDE');
     const [acor] = useState('#6DF030');
     const [victory] = useState({ audio: new Audio(Victory) });
+    const [q1] = useState({audio: new Audio(Q1)});
+    const [q2] = useState({audio: new Audio(Q2)});
+    const [q3] = useState({audio: new Audio(Q3)});
+    const [q4] = useState({audio: new Audio(Q4)});
+    const [q5] = useState({audio: new Audio(Q5)});
+    const [q6] = useState({audio: new Audio(Q6)});
+
+    const narracao = [
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6
+    ];
 
     const Habilidade = () => {
         if (4 <= 2 && desativah === false) {
@@ -36,6 +58,8 @@ function Treino(props) {
 
     const pausar = () => {
         victory.audio.pause();
+        narracao[questao].audio.pause();
+        narracao[questao].audio.currentTime = 0;
     }
 
     const jogarNovamente = () => {
@@ -52,6 +76,8 @@ function Treino(props) {
     }
 
     function confereAlternativa(i) {
+        narracao[questao].audio.pause();
+        narracao[questao].audio.currentTime = 0;
         let certo = false;
         if (vpv > 0) {
             for (let x = 0; x < corretas.length; x++) {
@@ -135,6 +161,10 @@ function Treino(props) {
     }
 
     function render() {
+        if(props.narracao && !hwin && questao > -1){
+            //console.log("cont: " + questao);
+            narracao[questao].audio.play();
+        }
         let charada;
         if (hwin) {
             charada = "Vencedor: Herói";
@@ -158,16 +188,17 @@ function Treino(props) {
                     <div className='charadasFim'>
                         <div>{charada}</div>
                     </div>
-                    <div className='hEr'>
-                        <button className='botaohEr' style={{ backgroundColor: hcor }} onClick={() => Habilidade()}>Habilidade</button>
-                        <button className='botaohEr' style={{ backgroundColor: '#FF0000' }}>Render-se</button>
-                    </div>
                     <div className='botoesOpcoes'>
                         <Link to="/" tabIndex={-1} className='Link'>
                             <button className='botaoMeJ' onClick={() => pausar()}>Menu Principal</button>
                         </Link>
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
+                    <HeR
+                        hwin={hwin}
+                        hcor={hcor}
+                        Habilidade={() => Habilidade}
+                    />
                     {renderAlternativa()}
                 </div>
             );
@@ -185,20 +216,20 @@ function Treino(props) {
                     <div className='hpv'>{Coracao(0, 4)} {heroi}</div>
                 </div>
                 <div className='charadas'>
-                    <div>{charada}</div>
+                    <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                 </div>
+                <HeR
+                    hwin={hwin}
+                    hcor={hcor}
+                    Habilidade={() => Habilidade()}
+                    stop={() => pausar()}
+                />
                 <div className='dicas'><Dica
                     dic={dicas[dica]}
                     usou={usouh}
                     pv={4}
                     desativou={desativah}
                 /></div>
-                <div className='hEr'>
-                    <button className='botaohEr' style={{ backgroundColor: hcor }} onClick={() => Habilidade()}>Habilidade</button>
-                    <Link to="/" tabIndex={-1} className='Link'>
-                        <button className='botaohEr' style={{ backgroundColor: '#FF0000' }}>Render-se</button>
-                    </Link>
-                </div>
                 {renderAlternativa()}
             </div>
         );

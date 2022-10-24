@@ -7,19 +7,53 @@ import HQ3 from './components/imgs/HQGeneralizacao/Slide17.jpg';
 import HQ4 from './components/imgs/HQGeneralizacao/Slide18.jpg';
 import HQ5 from './components/imgs/HQGeneralizacao/Slide19.jpg';
 import HQ6 from './components/imgs/HQGeneralizacao/Slide20.jpg';
+import Q1 from './components/audios/Generalizacao1.m4a';
+import Q2 from './components/audios/Generalizacao2.m4a';
+import Q3 from './components/audios/Generalizacao3.m4a';
+import Q4 from './components/audios/Generalizacao4.m4a';
+import Q5 from './components/audios/Generalizacao5.m4a';
+import Q6 from './components/audios/Generalizacao6.m4a';
 
-function HQGeneralizacao() {
+function HQGeneralizacao(props) {
     const [quadrinho, setQuadrinho] = useState(0);
+    const [q1] = useState({ audio: new Audio(Q1) });
+    const [q2] = useState({ audio: new Audio(Q2) });
+    const [q3] = useState({ audio: new Audio(Q3) });
+    const [q4] = useState({ audio: new Audio(Q4) });
+    const [q5] = useState({ audio: new Audio(Q5) });
+    const [q6] = useState({ audio: new Audio(Q6) });
     var h = (window.innerHeight * 80) / 100;
+
+    const narracao = [
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6
+    ];
+
+    if (props.narracao) {
+        narracao[quadrinho].audio.play();
+    }
+
+    const pausar = () => {
+        narracao[quadrinho].audio.pause();
+        narracao[quadrinho].audio.currentTime = 0;
+    }
 
     const Anterior = () => {
         if(quadrinho > 0){
+            narracao[quadrinho].audio.pause();
+            narracao[quadrinho].audio.currentTime = 0;
             setQuadrinho(quadrinho - 1);
         }
     }
 
     const Proximo = () => {
         if(quadrinho < Quadrinhos.length - 1){
+            narracao[quadrinho].audio.pause();
+            narracao[quadrinho].audio.currentTime = 0;
             setQuadrinho(quadrinho + 1);
         }
     }
@@ -61,7 +95,7 @@ function HQGeneralizacao() {
                 </div>
                 <div className='BotaoVoltar--Container'>
                     <Link to='/book' tabIndex={-1} className='Link'>
-                        <button className='BotaoVoltar'>Voltar</button>
+                        <button className='BotaoVoltar' onClick={() => pausar()}>Voltar</button>
                     </Link>
                 </div>
             </div>
