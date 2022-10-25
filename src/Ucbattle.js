@@ -40,7 +40,7 @@ function Ucbattle(props) {
         window.location.reload();
     }
 
-    var h = (window.innerHeight * 80) / 100;
+    //var h = (window.innerHeight * 80) / 100;
 
     if (props.v2) {
         return (
