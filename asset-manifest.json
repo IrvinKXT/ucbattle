@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ucbattle/static/css/main.72fab338.css",
-    "main.js": "/ucbattle/static/js/main.913bc128.js",
+    "main.css": "/ucbattle/static/css/main.9b343e01.css",
+    "main.js": "/ucbattle/static/js/main.0470c38a.js",
     "static/js/787.c4165c3d.chunk.js": "/ucbattle/static/js/787.c4165c3d.chunk.js",
     "static/media/V2Q5.m4a": "/ucbattle/static/media/V2Q5.51323b709b4999030c8a.m4a",
     "static/media/V5Q9.m4a": "/ucbattle/static/media/V5Q9.08b1ffa9d9872e4abd16.m4a",
@@ -96,6 +96,7 @@
     "static/media/Slide4.jpg": "/ucbattle/static/media/Slide4.c36b6a10bb7d35200fd8.jpg",
     "static/media/lose.mp3": "/ucbattle/static/media/lose.f53435eab52bcb0e2a9f.mp3",
     "static/media/V1q1d.m4a": "/ucbattle/static/media/V1q1d.fc14d02ccf963c2bf861.m4a",
+    "static/media/V3Q3e5.png": "/ucbattle/static/media/V3Q3e5.143c7b44f6731c0cf67c.png",
     "static/media/V4Q4e8e9.png": "/ucbattle/static/media/V4Q4e8e9.f643efe072ff406657bf.png",
     "static/media/v5q4e6e9.png": "/ucbattle/static/media/v5q4e6e9.3b8f69ce35f1a8b58855.png",
     "static/media/V3Q1(1).png": "/ucbattle/static/media/V3Q1(1).b86ea6d136d343c2d021.png",
@@ -103,21 +104,22 @@
     "static/media/v5q1e5e8.png": "/ucbattle/static/media/v5q1e5e8.e8f500cd685746ad6e0a.png",
     "static/media/V4Q1e3e5e7(1).png": "/ucbattle/static/media/V4Q1e3e5e7(1).b461830bc3afc1c9a5a5.png",
     "static/media/V4Q2e6.png": "/ucbattle/static/media/V4Q2e6.5d9a452f213ef28771f4.png",
-    "static/media/V3Q3e5(1).png": "/ucbattle/static/media/V3Q3e5(1).8e6a3a1bec01f2f430c5.png",
     "static/media/V3Q6e8.png": "/ucbattle/static/media/V3Q6e8.585a71f94822ed40417d.png",
     "static/media/v5q3e7e10.png": "/ucbattle/static/media/v5q3e7e10.e48a4a5476056208181f.png",
+    "static/media/Mestre.png": "/ucbattle/static/media/Mestre.eca9304f536ab199b6b8.png",
     "static/media/V3Q7.png": "/ucbattle/static/media/V3Q7.be58f6d7faf0bc06ced8.png",
     "static/media/V3Q4.png": "/ucbattle/static/media/V3Q4.dc7c511063c672630441.png",
+    "static/media/Aluno.png": "/ucbattle/static/media/Aluno.1873dc094194a74f2837.png",
     "static/media/V3Q2.png": "/ucbattle/static/media/V3Q2.ec357cc422ed55e05717.png",
     "static/media/correct.mp3": "/ucbattle/static/media/correct.0026d245a1e3149dd8b5.mp3",
     "static/media/incorrect.mp3": "/ucbattle/static/media/incorrect.aa5304298e4a10d06cb5.mp3",
     "index.html": "/ucbattle/index.html",
-    "main.72fab338.css.map": "/ucbattle/static/css/main.72fab338.css.map",
-    "main.913bc128.js.map": "/ucbattle/static/js/main.913bc128.js.map",
+    "main.9b343e01.css.map": "/ucbattle/static/css/main.9b343e01.css.map",
+    "main.0470c38a.js.map": "/ucbattle/static/js/main.0470c38a.js.map",
     "787.c4165c3d.chunk.js.map": "/ucbattle/static/js/787.c4165c3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72fab338.css",
-    "static/js/main.913bc128.js"
+    "static/css/main.9b343e01.css",
+    "static/js/main.0470c38a.js"
   ]
 }
