@@ -25,7 +25,7 @@ function Book(){
                     </Link>
                 </div>
                 <div className='Voltar'>
-                    <Link to="/ucbattle/" tabIndex={-1} className='Link'>
+                    <Link to="/" tabIndex={-1} className='Link'>
                         <button className='BotaoVoltarBook'>Voltar</button>
                     </Link>
                 </div>

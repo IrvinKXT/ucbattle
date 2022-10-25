@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 30px;
 }
 
 .BotaoJogar{
@@ -22,4 +23,10 @@
   height: 45px;
   border-radius: 8px;
   background-color: red;
+}
+
+.Imagens{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
 }

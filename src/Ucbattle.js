@@ -5,6 +5,8 @@ import { Link, /*useNavigate*/ } from 'react-router-dom';
 //import axios from 'axios';
 //import Aguardar from './components/Aguardar.js'
 //import App from './App';
+import Heroi from './components/imgs/Aluno.png';
+import Mestre from './components/imgs/Mestre.png';
 
 function Ucbattle(props) {
     //const [fases, setFases] = useState([]);
@@ -42,20 +44,18 @@ function Ucbattle(props) {
 
     if (props.v2) {
         return (
-            <div className='Ucbattle--Container' style={{ height: h }}>
+            <div className='Ucbattle--Container' >
                 <div className='Titulo--Container'>
                     <h1>U.C. Battle</h1>
                 </div>
-                <div className='UcbattleBotoes' style={{ height: h }}>
+                <div className='Imagens'>
+                    <img className='HeroiImg' src={Heroi} alt='' />
+                    <img className='MestreImg' src={Mestre} alt='' />
+                </div>
+                <div className='UcbattleBotoes' >
                     <button className='BotaoZerarProgresso' onClick={() => resetProgress()}>Zerar Progresso</button>
                     <Link to="/" tabIndex={-1} className='Link'>
                         <button className='BotaoJogar'>Jogar</button>
-                    </Link>
-                    <Link to="/comojogar" tabIndex={-1} className='Link'>
-                        <button className='BotaoComoJogar'>Como Jogar</button>
-                    </Link>
-                    <Link to='/book' tabIndex={-1} className='Link'>
-                        <button className='botaoBook'>Book</button>
                     </Link>
                 </div>
                 <div className='Aguardar'>
@@ -72,15 +72,13 @@ function Ucbattle(props) {
                 <div className='Titulo--Container'>
                     <h1>U.C. Battle</h1>
                 </div>
-                <div className='UcbattleBotoes' style={{ height: h }}>
+                <div className='Imagens'>
+                    <img className='HeroiImg' src={Heroi} alt='' />
+                    <img className='MestreImg' src={Mestre} alt='' />
+                </div>
+                <div className='UcbattleBotoes' >
                     <Link to="/" tabIndex={-1} className='Link'>
                         <button className='BotaoJogar'>Jogar</button>
-                    </Link>
-                    <Link to="/comojogar" tabIndex={-1} className='Link'>
-                        <button className='BotaoComoJogar'>Como Jogar</button>
-                    </Link>
-                    <Link to='/book' tabIndex={-1} className='Link'>
-                        <button className='botaoBook'>Book</button>
                     </Link>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import Alternativa from './components/Alternativa';
 import Dica from './components/Dica';
 import Qimg1 from './components/imgs/V3Q1(1).png';
 import Qimg2 from './components/imgs/V3Q2.png';
-import Qimg3_5 from './components/imgs/V3Q3e5(1).png';
+import Qimg3_5 from './components/imgs/V3Q3e5.png';
 import Qimg4 from './components/imgs/V3Q4.png';
 import Qimg6_8 from './components/imgs/V3Q6e8.png';
 import Qimg7 from './components/imgs/V3Q7.png';

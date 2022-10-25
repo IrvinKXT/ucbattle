@@ -57,7 +57,7 @@ function ComoJogar(){
             </p>
             </div>
             <div className='VoltarCJ'>
-            <Link to="/ucbattle/" tabIndex={-1} className='Link'>
+            <Link to="/" tabIndex={-1} className='Link'>
                 <button className='BotaoVoltarCJ'>Voltar</button>
             </Link>
             </div>
