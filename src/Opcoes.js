@@ -41,7 +41,7 @@ function Opcoes(props) {
                         <button className='Botao_ganharOUperder' onClick={() => altera2()} style={{ backgroundColor: ganharPerder ? "#4791FF" : "#DEDEDE" }}>{ganharPerder ? "Ligado" : "Desligado"}</button>
                     </div>
                     <div className='Narracao'>
-                        <p>Narração das Perguntas: </p>
+                        <p>Narração das perguntas, alternativas, dicas e book: </p>
                         <button className='Botao_Narracao' onClick={() => altera3()} style={{ backgroundColor: narracao ? "#4791FF" : "#DEDEDE" }}>{narracao ? "Ligado" : "Desligado"}</button>
                     </div>
                 </div>
