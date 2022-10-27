@@ -87,6 +87,23 @@ body{
     border-radius: 8px;
     border: 1px solid;
     margin: 2px;
+    justify-self: flex-end;
+  }
+
+  .Narracao_e_HeR{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Narra{
+    width: 130px;
+    height: 40px;
+    margin-left: 2px;
+    border-radius: 8px;
+    border: 1px solid;
+    margin: 2px;
+    background-color: #4791FF;
   }
 
 .hpv{

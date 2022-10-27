@@ -42,6 +42,27 @@ function Treino(props) {
         q6
     ];
 
+    const narraRepeat = () => {
+        if (!hwin) {
+            narracao[questao].audio.pause();
+            narracao[questao].audio.currentTime = 0;
+            narracao[questao].audio.play();
+        }
+    }
+
+    const repeteNarraButton = () => {
+        if (props.narracao) {
+            return (
+                <button className='Narra' onClick={() => narraRepeat()}>Repetir Narração</button>
+            )
+        }
+        else {
+            return (
+                <div>{""}</div>
+            )
+        }
+    }
+
     const Habilidade = () => {
         if (4 <= 2 && desativah === false) {
             setUsouh(true);
@@ -194,11 +215,15 @@ function Treino(props) {
                         </Link>
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
+                    <div className='Narracao_e_HeR'>
+                    {repeteNarraButton()}
                     <HeR
                         hwin={hwin}
                         hcor={hcor}
-                        Habilidade={() => Habilidade}
+                        Habilidade={() => Habilidade()}
+                        stop={() => pausar()}
                     />
+                </div>
                     {renderAlternativa()}
                 </div>
             );
@@ -218,12 +243,15 @@ function Treino(props) {
                 <div className='charadas'>
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                 </div>
-                <HeR
-                    hwin={hwin}
-                    hcor={hcor}
-                    Habilidade={() => Habilidade()}
-                    stop={() => pausar()}
-                />
+                <div className='Narracao_e_HeR'>
+                    {repeteNarraButton()}
+                    <HeR
+                        hwin={hwin}
+                        hcor={hcor}
+                        Habilidade={() => Habilidade()}
+                        stop={() => pausar()}
+                    />
+                </div>
                 <div className='dicas'><Dica
                     dic={dicas[dica]}
                     usou={usouh}

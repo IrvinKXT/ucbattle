@@ -22,6 +22,15 @@ import Q6 from './components/audios/V4Q6.m4a'
 import Q7 from './components/audios/V4Q7.m4a'
 import Q8 from './components/audios/V4Q8.m4a'
 import Q9 from './components/audios/V4Q9.m4a'
+import D1 from './components/audios/V4q1d.m4a';
+import D2 from './components/audios/V4q2d.m4a';
+import D3 from './components/audios/V4q3d.m4a';
+import D4 from './components/audios/V4q4e5d.m4a';
+import D5 from './components/audios/V4q4e5d.m4a';
+import D6 from './components/audios/V4q6d.m4a';
+import D7 from './components/audios/V4q7d.m4a';
+import D8 from './components/audios/V4q8e9d.m4a';
+import D9 from './components/audios/V4q8e9d.m4a';
 
 function V4(props) {
     const [questao, setQuestao] = useState(0);
@@ -47,6 +56,15 @@ function V4(props) {
     const [q7] = useState({audio: new Audio(Q7)});
     const [q8] = useState({audio: new Audio(Q8)});
     const [q9] = useState({audio: new Audio(Q9)});
+    const [d1] = useState({audio: new Audio(D1)});
+    const [d2] = useState({audio: new Audio(D2)});
+    const [d3] = useState({audio: new Audio(D3)});
+    const [d4] = useState({audio: new Audio(D4)});
+    const [d5] = useState({audio: new Audio(D5)});
+    const [d6] = useState({audio: new Audio(D6)});
+    const [d7] = useState({audio: new Audio(D7)});
+    const [d8] = useState({audio: new Audio(D8)});
+    const [d9] = useState({audio: new Audio(D9)});
 
     const narracao = [
         q1,
@@ -61,19 +79,42 @@ function V4(props) {
     ];
 
     const narradica = [
-        q1,
-        q2,
-        q3,
-        q4,
-        q5,
-        q6,
-        q7,
-        q8,
-        q9
+        d1,
+        d2,
+        d3,
+        d4,
+        d5,
+        d6,
+        d7,
+        d8,
+        d9
     ];
 
     const playdica = () => {
         narradica[dica].audio.play();
+    }
+
+    const narraRepeat = () => {
+        if (!vwin && !hwin) {
+            narradica[questao].audio.pause();
+            narradica[questao].audio.currentTime = 0;
+            narracao[questao].audio.pause();
+            narracao[questao].audio.currentTime = 0;
+            narracao[questao].audio.play();
+        }
+    }
+
+    const repeteNarraButton = () => {
+        if (props.narracao) {
+            return (
+                <button className='Narra' onClick={() => narraRepeat()}>Repetir Narração</button>
+            )
+        }
+        else {
+            return (
+                <div>{""}</div>
+            )
+        }
     }
 
     /* useEffect(() => {
@@ -260,12 +301,16 @@ function V4(props) {
                         </Link>
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
+                    <div className='Narracao_e_HeR'>
+                    {repeteNarraButton()}
                     <HeR
                         vwin={vwin}
                         hwin={hwin}
                         hcor={hcor}
-                        Habilidade={() => Habilidade}
+                        Habilidade={() => Habilidade()}
+                        stop={() => pausar()}
                     />
+                </div>
                     {renderAlternativa()}
                 </div>
             );
@@ -286,13 +331,16 @@ function V4(props) {
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                     <div><img className='Qimg' src={Qimagens[questao]} alt={alts[questao]} /></div>
                 </div>
-                <HeR
-                    vwin={vwin}
-                    hwin={hwin}
-                    hcor={hcor}
-                    Habilidade={Habilidade}
-                    stop={() => pausar()}
-                />
+                <div className='Narracao_e_HeR'>
+                    {repeteNarraButton()}
+                    <HeR
+                        vwin={vwin}
+                        hwin={hwin}
+                        hcor={hcor}
+                        Habilidade={() => Habilidade()}
+                        stop={() => pausar()}
+                    />
+                </div>
                 <div className='dicas'><Dica
                     dic={dicas[dica]}
                     usou={usouh}

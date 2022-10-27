@@ -17,6 +17,13 @@ import Q4 from './components/audios/V2Q4.m4a'
 import Q5 from './components/audios/V2Q5.m4a'
 import Q6 from './components/audios/V2Q6.m4a'
 import Q7 from './components/audios/V2Q7.m4a'
+import D1 from './components/audios/V2q1d.m4a';
+import D2 from './components/audios/V2q2d.m4a';
+import D3 from './components/audios/V2q3d.m4a';
+import D4 from './components/audios/V2q4d.m4a';
+import D5 from './components/audios/V2q5d.m4a';
+import D6 from './components/audios/V2q6d.m4a';
+import D7 from './components/audios/V2q7d.m4a';
 
 function V2(props) {
     const [questao, setQuestao] = useState(0);
@@ -40,6 +47,13 @@ function V2(props) {
     const [q5] = useState({audio: new Audio(Q5)});
     const [q6] = useState({audio: new Audio(Q6)});
     const [q7] = useState({audio: new Audio(Q7)});
+    const [d1] = useState({audio: new Audio(D1)});
+    const [d2] = useState({audio: new Audio(D2)});
+    const [d3] = useState({audio: new Audio(D3)});
+    const [d4] = useState({audio: new Audio(D4)});
+    const [d5] = useState({audio: new Audio(D5)});
+    const [d6] = useState({audio: new Audio(D6)});
+    const [d7] = useState({audio: new Audio(D7)});
 
     const narracao = [
         q1,
@@ -52,17 +66,40 @@ function V2(props) {
     ];
 
     const narradica = [
-        q1,
-        q2,
-        q3,
-        q4,
-        q5,
-        q6,
-        q7
+        d1,
+        d2,
+        d3,
+        d4,
+        d5,
+        d6,
+        d7
     ];
 
     const playdica = () => {
         narradica[dica].audio.play();
+    }
+
+    const narraRepeat = () => {
+        if (!vwin && !hwin) {
+            narradica[questao].audio.pause();
+            narradica[questao].audio.currentTime = 0;
+            narracao[questao].audio.pause();
+            narracao[questao].audio.currentTime = 0;
+            narracao[questao].audio.play();
+        }
+    }
+
+    const repeteNarraButton = () => {
+        if (props.narracao) {
+            return (
+                <button className='Narra' onClick={() => narraRepeat()}>Repetir Narração</button>
+            )
+        }
+        else {
+            return (
+                <div>{""}</div>
+            )
+        }
     }
 
     /*useEffect(() => {
@@ -249,12 +286,16 @@ function V2(props) {
                         </Link>
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
+                    <div className='Narracao_e_HeR'>
+                    {repeteNarraButton()}
                     <HeR
                         vwin={vwin}
                         hwin={hwin}
                         hcor={hcor}
                         Habilidade={() => Habilidade()}
+                        stop={() => pausar()}
                     />
+                </div>
                     {renderAlternativa()}
                 </div>
             );
@@ -274,13 +315,16 @@ function V2(props) {
                 <div className='charadas'>
                     <div>{"Questão " + (questao + 1) + ". " + charada}</div>
                 </div>
-                <HeR
-                    vwin={vwin}
-                    hwin={hwin}
-                    hcor={hcor}
-                    Habilidade={() => Habilidade()}
-                    stop={() => pausar()}
-                />
+                <div className='Narracao_e_HeR'>
+                    {repeteNarraButton()}
+                    <HeR
+                        vwin={vwin}
+                        hwin={hwin}
+                        hcor={hcor}
+                        Habilidade={() => Habilidade()}
+                        stop={() => pausar()}
+                    />
+                </div>
                 <div className='dicas'><Dica
                     dic={dicas[dica]}
                     usou={usouh}
