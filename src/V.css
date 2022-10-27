@@ -55,6 +55,10 @@ body{
   margin-right: 8px;
 }
 
+.Narra--Container{
+  margin-left: 8px;
+}
+
   .alternativas{
     display: flex;
     flex-direction: column;
@@ -87,7 +91,6 @@ body{
     border-radius: 8px;
     border: 1px solid;
     margin: 2px;
-    justify-self: flex-end;
   }
 
   .Narracao_e_HeR{

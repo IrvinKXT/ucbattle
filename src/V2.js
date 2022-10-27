@@ -92,7 +92,9 @@ function V2(props) {
     const repeteNarraButton = () => {
         if (props.narracao) {
             return (
-                <button className='Narra' onClick={() => narraRepeat()}>Repetir Narração</button>
+                <div className='Narra--Container'>
+                    <button className='Narra' onClick={() => narraRepeat()}>Repetir Narração</button>
+                </div>
             )
         }
         else {
