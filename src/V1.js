@@ -70,7 +70,9 @@ function V1(props) {
     ];
 
     const playdica = () => {
-        narradica[dica].audio.play();
+        if (props.narracao) {
+            narradica[dica].audio.play();
+        }
     }
 
     const narraRepeat = () => {
@@ -291,15 +293,15 @@ function V1(props) {
                         <button className='botaoMeJ' onClick={() => jogarNovamente()}>Jogar Novamente</button>
                     </div>
                     <div className='Narracao_e_HeR'>
-                    {repeteNarraButton()}
-                    <HeR
-                        vwin={vwin}
-                        hwin={hwin}
-                        hcor={hcor}
-                        Habilidade={() => Habilidade()}
-                        stop={() => pausar()}
-                    />
-                </div>
+                        {repeteNarraButton()}
+                        <HeR
+                            vwin={vwin}
+                            hwin={hwin}
+                            hcor={hcor}
+                            Habilidade={() => Habilidade()}
+                            stop={() => pausar()}
+                        />
+                    </div>
                     {renderAlternativa()}
                 </div>
             );

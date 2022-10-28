@@ -76,7 +76,9 @@ function V2(props) {
     ];
 
     const playdica = () => {
-        narradica[dica].audio.play();
+        if (props.narracao) {
+            narradica[dica].audio.play();
+        }
     }
 
     const narraRepeat = () => {
